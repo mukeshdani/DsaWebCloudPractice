@@ -7,6 +7,13 @@ const app = express();
 /*👉 This line creates an instance of an Express application.
 You’ll use this app object to define routes, middleware, and server behavior.*/
 
-app.listen(3000);
+app.use((req,res)=>{
+    res.send("Hello form the server");
+})// this function is known as request handler
+
+app.listen(3000, ()=>{
+    console.log("Server is successfully listening on port 3000....")
+});
 /*👉 This line starts the server and tells it to listen for incoming requests on port 3000. 
 Once this runs, your server is live and ready to handle requests at http://localhost:3000.*/ 
+
