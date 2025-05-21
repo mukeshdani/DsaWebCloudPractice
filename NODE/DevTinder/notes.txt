@@ -55,3 +55,8 @@ Understanding how tilde (~) and caret (^) affect version updates
   - Ensures reproducible builds
 
 --------------------------------------------------------------------------------
+
+📝 code Summary:
+require('express') → Load the Express library.
+express() → Create an app instance.
+app.listen(3000) → Start the server on port 3000.
