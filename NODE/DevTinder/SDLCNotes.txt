@@ -1,87 +1,121 @@
-How Projects are build in the industry?
-Requirements (Product/Project Manager/PM)
-->Design(Senior Engineer/EM)
-->Development(SDE1/SDE2/also unit testing done here)
-->Testing(SDET/Tester)
-->Deployment(DevopsTeam/SRE)->Maintainance
+How Projects Are Built in the Industry
 
-Waterfall Model
----------------
-SDLC Life Cycle
+1. Requirements Gathering
+- Handled by: Product Manager (PM) or Project Manager
+- Activities: Understanding business needs, defining scope, and documenting requirements.
 
-PM->work with designers and add in the Requirements
+2. Design Phase
+- Handled by: Senior Engineers or Engineering Managers (EM)
+- Activities:
+  - System architecture planning
+  - High-Level Design (HLD)
+  - Low-Level Design (LLD)
+  - Tech stack selection
+  - Microservices planning (if applicable)
 
-This design is not exectly a UI 
+Note: This design phase is not limited to UI design — it includes backend architecture and service planning.
 
-Now tech team come into the picture
-Now design document will be ready 
-Tack stack, Microservices and HLD/LLD 
+3. Development
+- Handled by: SDE1, SDE2, etc.
+- Activities:
+  - Writing code
+  - Unit testing
+  - Code reviews
 
-----------------------------------------------------------------------------------------------
-Monolith vs Microservices
-========================
--Dev Speed
--Code Repo
--Scalability
--Deployment
--Tech stack
--Infra Cost
--Complexity
--Fault Isolation
--Testing
--Ownership
--Maintainence
--Rewamps
--Debugging
--Dev Experinece
+4. Testing
+- Handled by: SDET or QA Testers
+- Activities:
+  - Functional testing
+  - Regression testing
+  - Automation testing
 
-Ques: What happens in dev.com???
-Ans: Microservices
-1. Student-web: Written in Next.js
-2. Admin-web: Written in React.js
-3. Backend: Written in Node.js
-4. Student-mobile-app: React-Native
+5. Deployment
+- Handled by: DevOps or SRE (Site Reliability Engineering) Teams
+- Activities:
+  - CI/CD pipelines
+  - Infrastructure provisioning
+  - Monitoring setup
 
-What are we going to build in dev Tinder
-We use 2 Microservices
+6. Maintenance
+- Ongoing support, bug fixes, and performance improvements.
+
+SDLC (Software Development Life Cycle) – Waterfall Model
+
+1. PM collaborates with designers to finalize requirements.
+2. Design documents are created (HLD, LLD, tech stack, microservices layout).
+3. Engineering team takes over for development and testing.
+4. Deployment and maintenance follow.
+
+Monolith vs Microservices Comparison
+
+Feature             | Monolith                          | Microservices                        
+--------------------|-----------------------------------|--------------------------------------
+Dev Speed           | Slower                            | Faster (independent teams)           
+Code Repo           | Single repo                       | Multiple repos                       
+Scalability         | Limited                           | Highly scalable                      
+Deployment          | All-at-once                       | Independent deployments              
+Tech Stack          | Uniform                           | Polyglot (different per service)     
+Infra Cost          | Lower initially                   | Higher (more infra overhead)         
+Complexity          | Lower                             | Higher (service coordination)        
+Fault Isolation     | Poor                              | Strong (one service can fail safely) 
+Testing             | Easier                            | More complex                         
+Ownership           | Shared                            | Clear per service                    
+Maintenance         | Centralized                       | Distributed                          
+Rewrites/Reworks    | Risky                             | Easier to isolate                    
+Debugging           | Simpler                           | Requires tracing tools               
+Dev Experience      | Straightforward                   | Requires more tooling                
+
+Example: What Happens in dev.com?
+
+Architecture: Microservices
+
+- student-web: built with Next.js
+- admin-web: built with React.js
+- backend: built with Node.js
+- student-mobile-app: built with React Native
+
+Project: Dev Tinder Clone
+
+Microservices Used:
 1. Frontend: React
-2. Backend: Node.js
+2. Backend: Node.js + MongoDB
 
-Features:
+Features to Build:
 1. Create an account
 2. Login
-3. Update your profile
-4. Feed page - explore 
-5. Send connection request / Ignore 
-6. See our matches
-7. See the request we've Send/received
-8. Update your profile
+3. Update profile
+4. Feed page (explore)
+5. Send/Ignore connection requests
+6. View matches
+7. View sent/received requests
+8. Update profile
 
 Tech Planning:
-1. 2 Microservices (1. Frontend(React), 2. Backend(Node.js and Mongodb))
+- 2 Microservices:
+  - Frontend: React
+  - Backend: Node.js + MongoDB
 
-LLD (Low Level Design):
-2 Impo things: 1. DB Design and 2. API design
+Low-Level Design (LLD)
 
-DB Design:
-- userCollection (user information: firstName, lastName, emailId, password, age, gender)
-- connectionRequest (fromUserId, toUserId, status: PENDING|APPROVED|ACCEPTED|REJECTED|IGNORED )
+1. Database Design
 
-API Design:
-REST-API: 
-GET | POST | PUT | PATCH | DELETE -> Http Methods 
+- userCollection:
+  - firstName, lastName, emailId, password, age, gender
 
-1. POST:  /signup
-2. POST:  /Login
-3. GET:   /profile         (getProfile)
-4. POST:  /profile         (post Profile)
-5. PATCH: /profile         (updateProfile)
-6. DELETE:/profile         (deleteProfile)
-7. POST:  /sendRequest     (ignore or show interest)
-8. POST:  /reveiwRequest   (accept or reject)
-9. GET:   /request         (requests)
-10. GET:  /connection
+- connectionRequest:
+  - fromUserId, toUserId, status: PENDING, APPROVED, ACCEPTED, REJECTED, IGNORED
 
+2. API Design (RESTful)
 
-
-
+Method | Endpoint         | Description                      
+--------|------------------|----------------------------------
+POST   | /signup          | Register a new user              
+POST   | /login           | User login                       
+GET    | /profile         | Get user profile                 
+POST   | /profile         | Create user profile              
+PATCH  | /profile         | Update user profile              
+DELETE | /profile         | Delete user profile              
+POST   | /sendRequest     | Send/Ignore connection request   
+POST   | /reviewRequest   | Accept/Reject a request          
+GET    | /request         | View all requests                
+GET    | /connection      | View all connections             
