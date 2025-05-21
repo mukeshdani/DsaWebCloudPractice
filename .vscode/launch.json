@@ -1,0 +1,147 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "JAVA.Queue.SimpleQueue.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "JAVA.Stack.ImplementUsingLinkedList.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "JAVA.Stack.ImplementUsingArray.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "JAVA.Stack.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "DoublyLinkedLists.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "singly.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "JAVA.LinkedListData.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "linkedList",
+            "request": "launch",
+            "mainClass": "JAVA.LinkedListData.linkedList",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "LinkedListTheory",
+            "request": "launch",
+            "mainClass": "JAVA.LinkedListData.LinkedListTheory",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "LinkedListtheory",
+            "request": "launch",
+            "mainClass": "JAVA.LinkedListData.LinkedListtheory",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "LinkedList",
+            "request": "launch",
+            "mainClass": "JAVA.LinkedListData.LinkedList",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "ArrayOperations",
+            "request": "launch",
+            "mainClass": "JAVA.ARRAY.ArrayOperations",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "ArraysInternals",
+            "request": "launch",
+            "mainClass": "JAVA.ARRAY.ArraysInternals",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "AddTwoNumbers",
+            "request": "launch",
+            "mainClass": "JAVA.AddTwoNumbers",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "BinarySearch",
+            "request": "launch",
+            "mainClass": "JAVA.BinarySearch.BinarySearch",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "linearSearch",
+            "request": "launch",
+            "mainClass": "JAVA.LinearSearch.linearSearch",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "Test",
+            "request": "launch",
+            "mainClass": "JAVA.Test",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "TwoSum",
+            "request": "launch",
+            "mainClass": "JAVA.TwoSum",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "VariableDataType",
+            "request": "launch",
+            "mainClass": "JAVA.VariableDataType",
+            "projectName": "Practical_20bba4fe"
+        }
+    ]
+}

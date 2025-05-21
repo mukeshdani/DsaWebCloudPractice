@@ -1,0 +1,84 @@
+How Projects are build in the industry?
+Requirements (Product/Project Manager/PM)
+->Design(Senior Engineer/EM)
+->Development(SDE1/SDE2/also unit testing done here)
+->Testing(SDET/Tester)
+->Deployment(DevopsTeam/SRE)->Maintainance
+
+Waterfall Model
+---------------
+SDLC Life Cycle
+
+PM->work with designers and add in the Requirements
+
+This design is not exectly a UI 
+
+Now tech team come into the picture
+Now design document will be ready 
+Tack stack, Microservices and HLD/LLD 
+
+----------------------------------------------------------------------------------------------
+Monolith vs Microservices
+========================
+-Dev Speed
+-Code Repo
+-Scalability
+-Deployment
+-Tech stack
+-Infra Cost
+-Complexity
+-Fault Isolation
+-Testing
+-Ownership
+-Maintainence
+-Rewamps
+-Debugging
+-Dev Experinece
+
+Ques: What happens in dev.com???
+Ans: Microservices
+1. Student-web: Written in Next.js
+2. Admin-web: Written in React.js
+3. Backend: Written in Node.js
+4. Student-mobile-app: React-Native
+
+What are we going to build in dev Tinder
+We use 2 Microservices
+1. Frontend: React
+2. Backend: Node.js
+
+Features:
+1. Create an account
+2. Login
+3. Update your profile
+4. Feed page - explore 
+5. Send connection request / Ignore 
+6. See our matches
+7. See the request we've Send/received
+8. Update your profile
+
+Tech Planning:
+1. 2 Microservices (1. Frontend(React), 2. Backend(Node.js and Mongodb))
+
+LLD (Low Level Design):
+2 Impo things: 1. DB Design and 2. API design
+
+DB Design:
+- userCollection (user information: firstName, lastName, emailId, password, age, gender)
+- connectionRequest (fromUserId, toUserId, status: PENDING|APPROVED|ACCEPTED|REJECTED|IGNORED )
+
+API Design:
+REST-API: 
+GET | POST | PUT | PATCH | DELETE -> Http Methods 
+
+1. POST:  /signup
+2. POST:  /Login
+3. GET:   /profile         (getProfile)
+4. POST:  /profile         (post Profile)
+5. PATCH: /profile         (updateProfile)
+6. DELETE:/profile         (deleteProfile)
+7. POST:  /sendRequest     (ignore or show interest)
+8. POST:  /reveiwRequest   (accept or reject)
+9. GET:   /request         (requests)
+10. GET:  /connection
+
