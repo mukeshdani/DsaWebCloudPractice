@@ -22,6 +22,7 @@ Major (X.y.z)
             Changes that break backward compatibility — like removing or changing existing functionality.
             Example: 1.4.2 → 2.0.0
 
+--------------------------------------------------------------------------------
 
 Versioning Symbols: ~ vs ^ in Semantic Versioning
 Understanding how tilde (~) and caret (^) affect version updates
@@ -31,3 +32,26 @@ Understanding how tilde (~) and caret (^) affect version updates
 
 ^4.19.0 (Caret) → Accepts minor and patch updates: >=4.19.0 and <5.0.0
                   (i.e., allows updates like 4.19.1, 4.20.0, 4.21.3 but not 5.0.0)
+
+--------------------------------------------------------------------------------
+
+📦 Understanding `package.json` and `package-lock.json`
+
+`package.json`
+- Purpose: Defines the metadata of the project and its dependencies.
+- Contains:
+  - Project name, version, description
+  - Scripts to run tasks (e.g., build, test)
+  - List of dependencies and their versions
+- Versioning Symbols:
+  - `~4.19.0` (Tilde): Accepts only patch updates → `>=4.19.0` and `<4.20.0`
+  - `^4.19.0` (Caret): Accepts minor and patch updates → `>=4.19.0` and `<5.0.0`
+
+`package-lock.json`
+- Purpose: Locks the exact versions of dependencies for consistent installs.
+- Contains:
+  - Detailed tree of dependencies
+  - Exact versions of each dependency
+  - Ensures reproducible builds
+
+--------------------------------------------------------------------------------
