@@ -1,0 +1,23 @@
+✅ Versioning Format: MAJOR.MINOR.PATCH
+
+Example: 4.19.2
+
+            Part	Meaning
+            4	    Major version – Breaking changes that are not backward compatible
+            19	    Minor version – New features that are backward compatible
+            2	    Patch version – Bug fixes or small improvements that are backward compatible
+
+🔍 Detailed Explanation:
+
+Patch (x.y.Z)
+
+            Small bug fixes or minor improvements that don’t affect the API or functionality.
+            Example: 1.0.0 → 1.0.1
+
+Minor (x.Y.z)
+            New features added in a backward-compatible way (i.e., existing functionality still works).
+            Example: 1.0.0 → 1.1.0
+
+Major (X.y.z)
+            Changes that break backward compatibility — like removing or changing existing functionality.
+            Example: 1.4.2 → 2.0.0
