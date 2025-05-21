@@ -8,6 +8,13 @@
             "type": "java",
             "name": "main",
             "request": "launch",
+            "mainClass": "JAVA.Queue.CircularQueue.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
             "mainClass": "JAVA.Queue.SimpleQueue.main",
             "projectName": "Practical_20bba4fe"
         },
