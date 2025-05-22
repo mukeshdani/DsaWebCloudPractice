@@ -51,8 +51,8 @@ public class Dequeue {
     public void insertRear(int data){
         if(isFull())return;
         if(isEmpty()){
-            front = -1;
-            rear = -1;
+            front = 0;
+            rear = 0;
         }else if (rear==capacity){
             rear = 0;
         }else {
@@ -103,11 +103,14 @@ public class Dequeue {
         return queue[rear];
     }
 
+    public int size(){
+        return this.size;
+    }
     public void display(){
         if(isEmpty())return;
         
-        for(int i = 0 ; i< size ; i++){
-            System.out.print(queue[(front+1)%capacity] + " " + "\t");
+        for(int i = 0 ; i < size ; i++){
+            System.out.print(queue[(front+i)%capacity] + " " + "\t");
         }
         System.out.println();
     }
