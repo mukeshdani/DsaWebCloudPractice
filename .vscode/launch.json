@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "reverseStringUsingStack",
+            "request": "launch",
+            "mainClass": "JAVA.Stack.Practice.reverseStringUsingStack",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
             "name": "main",
             "request": "launch",
             "mainClass": "JAVA.Queue.Dequeue.main",
