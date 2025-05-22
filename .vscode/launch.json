@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ParenthesesValidator",
+            "request": "launch",
+            "mainClass": "JAVA.Stack.Practice.ParenthesesValidator",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "CheckBalanceParentheses",
+            "request": "launch",
+            "mainClass": "JAVA.Stack.Practice.CheckBalanceParentheses",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
             "name": "reverseStringUsingStack",
             "request": "launch",
             "mainClass": "JAVA.Stack.Practice.reverseStringUsingStack",
