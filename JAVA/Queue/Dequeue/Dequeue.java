@@ -62,5 +62,53 @@ public class Dequeue {
         size++;
     }
 
-    
+    public int deleteFront(){
+           if(isEmpty())return -1;
+           
+           int value = queue[front];
+
+           if(front == rear){
+                rear=-1;
+                front=-1;
+           }else if(front == capacity-1){
+                front = 0;
+           }else {
+                front++;
+           }
+           size--;
+           return value;
+    }
+
+    public int deleteRear(){
+        if(isEmpty())return -1;
+        int value = queue[rear];
+        if(front == rear){
+            rear = -1;
+            front =1;
+        }else if(rear == 0){
+            rear = capacity - 1;
+        }else {
+            rear --;
+        }
+        size--;
+        return value;
+    }
+
+    public int getFront(){
+        if(isEmpty())return -1;
+        return queue[front];
+    }
+    public int getRear(){
+        if(isEmpty())return -1;
+        return queue[rear];
+    }
+
+    public void display(){
+        if(isEmpty())return;
+        
+        for(int i = 0 ; i< size ; i++){
+            System.out.print(queue[(front+1)%capacity] + " " + "\t");
+        }
+        System.out.println();
+    }
 }
