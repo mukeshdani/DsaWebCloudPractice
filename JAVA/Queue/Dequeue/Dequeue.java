@@ -31,7 +31,7 @@ public class Dequeue {
     }
 
     //add front
-    public void insertFront(){
+    public void insertFront(int data){
          if(isFull()){
             return;
          }
@@ -40,10 +40,12 @@ public class Dequeue {
             rear = 0;
         }
         else if(front == 0){
-            
+            front = capacity-1;
+        }else {
+            front--;
         }
-        
-
+        queue[front] = data;
+        size++;
     }
 
 
