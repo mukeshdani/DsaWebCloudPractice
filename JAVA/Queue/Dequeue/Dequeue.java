@@ -48,6 +48,19 @@ public class Dequeue {
         size++;
     }
 
+    public void insertRear(int data){
+        if(isFull())return;
+        if(isEmpty()){
+            front = -1;
+            rear = -1;
+        }else if (rear==capacity){
+            rear = 0;
+        }else {
+            rear++;
+        }
+        queue[rear] = data;
+        size++;
+    }
 
     
 }
