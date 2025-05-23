@@ -7,10 +7,27 @@ public class Samosa {
     private Samosa(){}
 
     //Lazy way of creating singleton object
-    public static Samosa getSamosa(){
+    //Thread environment: Create problem
+    // we cant use method synchronized
+    public static Samosa getSamosa1()
+    {
         //object of this class
         if(samosa == null){
-            samosa = new Samosa();
+                samosa = new Samosa();
+        }
+        return samosa;
+    }
+
+    //synchronized blocked: good way 
+    public static Samosa getSamosa2()
+    {
+        //object of this class
+        if(samosa == null){
+            synchronized(Samosa.class){
+                if(samosa == null){
+                  samosa = new Samosa();
+                }
+            }
         }
         return samosa;
     }
