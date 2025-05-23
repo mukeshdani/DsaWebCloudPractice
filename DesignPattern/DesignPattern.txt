@@ -1,15 +1,34 @@
-Design Pattern:
----------------
-Design patterns are the well proved solution of commonly occuring problems in softare design.
+Design Patterns Overview
 
-Software:
-Every developer have single problems but having different approach
+Definition:
+Design patterns are proven solutions to commonly occurring problems in software design. They represent best practices refined through experience and are widely used in object-oriented software development.
 
-1. Singleton Design Pattern: creating single instance (object)
+Key Insight:
+While developers often face similar problems, their approaches may vary. Design patterns offer a shared vocabulary and structure to solve these problems efficiently.
 
-Design patterns represents an idea
+Types of Design Patterns
+Design patterns are broadly categorized into three types:
 
-Categrorization design pattern:
-1. Creational Design pattern (factory, builder, Singleton pattern etc).
-2. Structural Design pattern (proxy , adaptor)
-3. Behavioral Design pattern (Observer, State, Iterator)
+1. Creational Patterns
+   Focus on object creation mechanisms, trying to create objects in a manner suitable to the situation.
+   Examples:
+   - Singleton: Ensures a class has only one instance and provides a global point of access to it.
+   - Factory Method
+   - Builder
+
+2. Structural Patterns
+   Deal with object composition and typically help ensure that if one part of a system changes, the entire system doesn’t need to do the same.
+   Examples:
+   - Adapter
+   - Proxy
+
+3. Behavioral Patterns
+   Focus on communication between objects, what goes on between objects and how they operate together.
+   Examples:
+   - Observer
+   - State
+   - Iterator
+
+Historical Background
+- Christopher Alexander was the first to introduce the concept of design patterns in 1977, originally in the context of architecture.
+- The concept was later adapted to software engineering by the Gang of Four (GoF) — Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides — in their influential 1994 book "Design Patterns: Elements of Reusable Object-Oriented Software".
