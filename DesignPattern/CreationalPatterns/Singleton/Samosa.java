@@ -6,6 +6,7 @@ public class Samosa {
     //constructor
     private Samosa(){}
 
+    //Lazy way of creating singleton object
     public static Samosa getSamosa(){
         //object of this class
         if(samosa == null){

@@ -9,6 +9,9 @@ public class example {
         Samosa samosa2= Samosa.getSamosa();
         System.out.println("samosa2: " + samosa2.hashCode());
 
+        System.out.println("Jalebi1. " + Jalebi.getJalebi().hashCode());
+        System.out.println("Jalebi2. " +Jalebi.getJalebi().hashCode());
+
     }
     
 }
