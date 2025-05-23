@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "example",
+            "request": "launch",
+            "mainClass": "DesignPattern.CreationalPatterns.Singleton.example",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
             "name": "ParenthesesValidator",
             "request": "launch",
             "mainClass": "JAVA.Stack.Practice.ParenthesesValidator",
