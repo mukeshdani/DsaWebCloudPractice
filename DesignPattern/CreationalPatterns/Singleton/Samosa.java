@@ -1,10 +1,16 @@
 package DesignPattern.CreationalPatterns.Singleton;
 
-public class Samosa {
+import java.io.Serializable;
+
+public class Samosa implements Serializable {
 
     private static Samosa samosa;
     //constructor
-    private Samosa(){}
+    private Samosa(){
+        // if(samosa!=null){
+        //     throw new RuntimeException("You are trying to break");
+        // }
+    }
 
     //Lazy way of creating singleton object
     //Thread environment: Create problem
@@ -15,6 +21,10 @@ public class Samosa {
         if(samosa == null){
                 samosa = new Samosa();
         }
+        return samosa;
+    }
+
+    public Object readResolve(){
         return samosa;
     }
 
