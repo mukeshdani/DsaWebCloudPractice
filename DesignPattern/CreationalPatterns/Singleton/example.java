@@ -25,7 +25,7 @@ public class example {
          * 2. Use enum
          * 
          * 2. Deserialization
-         * Solution: override readresolve Method
+         * Solution: implementing readresolve Method
          * 
          * 
          * 
