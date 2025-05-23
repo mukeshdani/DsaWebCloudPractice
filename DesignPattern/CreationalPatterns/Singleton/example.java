@@ -1,12 +1,4 @@
 package DesignPattern.CreationalPatterns.Singleton;
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInput;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.lang.reflect.Constructor;
-
 public class example {
 
     public static void main(String[] args) throws Exception{
@@ -27,6 +19,7 @@ public class example {
          * 2. Deserialization
          * Solution: implementing readresolve Method
          * 
+         * 3.Object Cloning
          * 
          * 
          */
@@ -41,15 +34,15 @@ public class example {
         // Samosa s2 = constructor.newInstance();
         // System.out.println(s2.hashCode());
 
-        Samosa s1 = Samosa.getSamosa1();
-        ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("abc.ob"));
-        oos.writeObject(s1);
+        // Samosa s1 = Samosa.getSamosa1();
+        // ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("abc.ob"));
+        // oos.writeObject(s1);
 
-        System.out.println("serialization done..." + s1.hashCode());
+        // System.out.println("serialization done..." + s1.hashCode());
 
-        ObjectInputStream ois = new ObjectInputStream(new FileInputStream("abc.ob"));
-        Samosa s2 = (Samosa)ois.readObject();
-        System.out.println(s2.hashCode());
+        // ObjectInputStream ois = new ObjectInputStream(new FileInputStream("abc.ob"));
+        // Samosa s2 = (Samosa)ois.readObject();
+        // System.out.println(s2.hashCode());
 
     }
     
