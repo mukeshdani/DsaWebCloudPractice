@@ -1,0 +1,15 @@
+Design Pattern:
+---------------
+Design patterns are the well proved solution of commonly occuring problems in softare design.
+
+Software:
+Every developer have single problems but having different approach
+
+1. Singleton Design Pattern: creating single instance (object)
+
+Design patterns represents an idea
+
+Categrorization design pattern:
+1. Creational Design pattern (factory, builder, Singleton pattern etc).
+2. Structural Design pattern (proxy , adaptor)
+3. Behavioral Design pattern (Observer, State, Iterator)
