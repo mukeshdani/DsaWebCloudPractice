@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "DeveloperClient",
+            "request": "launch",
+            "mainClass": "DesignPattern.CreationalPatterns.FactoryMethod.DeveloperClient",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
             "name": "example",
             "request": "launch",
             "mainClass": "DesignPattern.CreationalPatterns.Singleton.example",
