@@ -1,7 +1,6 @@
 package DesignPattern.CreationalPatterns.FactoryMethod;
 
 public class DeveloperClient {
-
     public static void main(String[] args) {
        Employee employee =  EmployeeFactory.getEmployee("ANDROID_DEVELOPER");
        System.out.println("ANDROID_DEVELOPER: " + employee.salary());
