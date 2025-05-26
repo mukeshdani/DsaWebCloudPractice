@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "JAVA.OOPS.Polymorphism.Main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "JAVA.OOPS.Abstraction.Interface.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "JAVA.OOPS.Abstraction.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
             "name": "main",
             "request": "launch",
             "mainClass": "JAVA.OOPS.Overriding.main",
