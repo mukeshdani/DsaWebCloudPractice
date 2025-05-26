@@ -8,6 +8,13 @@
             "type": "java",
             "name": "main",
             "request": "launch",
+            "mainClass": "JAVA.OOPS.Inhertance.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
             "mainClass": "JAVA.OOPS.main",
             "projectName": "Practical_20bba4fe"
         },

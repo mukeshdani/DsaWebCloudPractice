@@ -6,5 +6,8 @@ public class main {
         Student student = new Student();// using new keyword we allocate dynamic memory 
         student.study();
         student.showFullDetails();
+
+        Student student2 = new Student(20);
+        student2.showFullDetails();
     }
 }

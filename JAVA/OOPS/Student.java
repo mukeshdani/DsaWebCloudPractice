@@ -5,8 +5,23 @@ public class Student {
     int studentId;
     String studentName;
     String studentCity;
+
+    //Constructor
+    public Student(){
+        System.out.println("Constructor Called");
+    }
+
+    public Student(int studentId){
+        this.studentId = studentId;
+        System.out.println("parameterized Constructor Called");
+    }
+
     //Behaviour: Member Method : methods : (functions)
     public void study(){
+        System.out.println(studentName +" is studying.");
+    } 
+    //Method Overloading
+    public void study(float f){
         System.out.println(studentName +" is studying.");
     } 
     public void showFullDetails(){
