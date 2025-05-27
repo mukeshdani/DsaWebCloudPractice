@@ -10,7 +10,7 @@ class AgeInvalidException extends Exception{
 }
 
 class Example{
-    
+
     public static void main(String[] args){
         System.out.println("Starting.......................");
         try{
@@ -44,6 +44,6 @@ class Example{
             //always gets executed
             System.out.println("I am in finally block......");
         }
-        System.out.println("Terminated.................");
+        System.out.println("Terminated or end the code.................");
     }
 }
