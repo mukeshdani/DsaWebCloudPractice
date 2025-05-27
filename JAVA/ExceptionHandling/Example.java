@@ -10,6 +10,7 @@ class AgeInvalidException extends Exception{
 }
 
 class Example{
+    
     public static void main(String[] args){
         System.out.println("Starting.......................");
         try{
