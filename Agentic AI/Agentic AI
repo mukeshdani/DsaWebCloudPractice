@@ -1,0 +1,89 @@
+🤖 Agentic AI
+Agentic AI means the AI can:
+
+Make decisions
+Take actions
+Work with little or no human help
+It acts like an agent that sees something, thinks about it, and then does something.
+
+🎨 Generative AI
+Generative AI is a type of AI that can create new things like:
+
+Text (e.g., stories, emails)
+Images
+Music
+Videos
+It learns from existing data and then creates something new based on patterns.
+
+Example: ChatGPT (like me!) can write answers, poems, or code.
+
+🤝 Combining Agentic AI + Generative AI
+These two can work together! Here are some examples:
+
+1. Advertising and Marketing
+    Agentic AI decides who should see an ad.
+    Generative AI creates the ad content based on what the person likes.
+
+2. Customer Support Chatbot
+    Agentic AI figures out what the customer needs.
+    Generative AI writes a smart and helpful reply.
+
+
+🧠 What is an AI Agent?
+An agent is something that:
+
+Perceives (sees or senses the world)
+Decides (thinks about what to do)
+Acts (does something)
+
+Example: Thermostat
+
+Perceive: Senses room temperature
+Decide: Is it too hot or cold?
+Act: Turns heater or AC on/off
+
+
+🧩 Types of AI Agents
+There are 5 main types of AI agents:
+
+1. Simple Reflex Agent
+Works with basic rules like “if this, then that”
+No memory, no learning
+Examples:
+
+Automatic door: If someone is near → open the door
+Motion light: If movement is detected → turn on light
+
+
+2. Model-Based Reflex Agent
+Like a simple agent but with memory
+Remembers past events to make better decisions
+Example:
+
+You say: “Call me Aarohi.”
+Later you ask: “What’s my name?”
+Simple agent: “I don’t know.”
+Model-based agent: “Your name is Aarohi!”
+
+
+3. Goal-Based Agent
+Has a goal and plans how to reach it
+Can replan if something changes
+Examples:
+
+GPS: Goal is to reach a destination. It checks traffic and finds the best route.
+Booking a flight under ₹5000: It compares options and finds the best one.
+
+
+4. Utility-Based Agent
+Tries to find the best way to reach a goal
+Gives each option a score and picks the best one
+Example:
+
+Chess-playing AI: Looks at 10 possible moves, scores each one, and picks the best move.
+
+
+5. Learning Agent (Reinforcement Agent)
+Learns from experience
+Gets better over time by trying, getting feedback, and improving
+Learning Cycle:
