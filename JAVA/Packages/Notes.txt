@@ -1,0 +1,110 @@
+Packages:
+
+ What is packages and why we need it?
+ how to create packages without IDE
+ how to declare package (package keyword)
+ How to use classes of packages in our custom class 
+ Use of Classpath with packages with detail example
+ jar tool with example
+ Creating our jar file with classes in side
+ Extracting jar file
+ Access Modifiers in java
+
+
+
+
+ 📦 Java Packages, Classpath, JAR Files & Access Modifiers – A Complete Guide
+
+🔹 What is a Package in Java?
+A package in Java is a namespace that organizes a set of related classes and interfaces.
+
+✅ Why Use Packages?
+Avoid class name conflicts
+Easier to maintain and locate classes
+Provides access protection
+Organizes code logically
+🛠️ How to Create a Package (Without IDE)
+Create a folder with the package name (e.g., myPack)
+Inside that folder, create your .java file
+At the top of the file, declare the package:
+
+package myPack;
+
+public class Start {
+    public void show() {
+        System.out.println("Hello from myPack!");
+    }
+}
+
+Compile using: javac myPack/Start.java
+
+📥 Using Classes from a Package
+1. Using Fully Qualified Name: 
+myPack.Start obj = new myPack.Start();
+
+2. Importing a Single Class: 
+import myPack.Start;
+Start obj = new Start();
+
+3. Importing All Classes from a Package:
+import myPack.*;
+Start obj = new Start();
+
+📂 What is Classpath?
+Classpath tells the Java compiler and JVM where to find class files.
+
+🔄 Difference Between PATH and CLASSPATH:
+
+PATH	                                               CLASSPATH
+Used to locate Java tools (e.g., javac, java)	       Used to locate .class files
+Set for Java commands	                               Set for Java classes
+
+
+🧭 Setting Classpath
+1. Temporary (for current session only):
+set classpath=.;G:\myPack
+
+2. Permanent (Windows):
+Go to System Properties → Environment Variables
+Add CLASSPATH variable with value like .;G:\myPack
+
+
+📦 JAR (Java Archive) Files
+A JAR file bundles multiple .class files and resources into one file for distribution.
+
+
+
+✅ Why Use JAR?
+Easy to distribute
+Can be executable
+Reduces file clutter
+🔧 Creating a JAR File:jar -cvf mylib.jar *.class
+c: create
+v: verbose (show details)
+f: specify file name
+
+
+📤 Extracting a JAR File: jar -xvf mylib.jar
+
+🔐 Access Modifiers in Java
+Access modifiers control visibility of classes, methods, and variables.
+
+Modifier	SameClass	SamePackage	    Subclass    	Other Packages
+private	    ✅	       ❌	            ❌	              ❌
+default	    ✅	       ✅	            ❌	              ❌
+protected	✅          ✅	            ✅	              ❌
+public	    ✅	       ✅	            ✅	              ✅
+
+📥 import Keyword
+Used to bring classes from packages into your code.
+import java.util.Scanner;
+
+Scanner sc = new Scanner(System.in);
+
+🧪 Summary
+Topic	               Key Points
+Package	               Organizes classes, avoids conflicts
+Classpath	           Tells JVM where to find classes
+JAR	                   Bundles classes for distribution
+Access Modifiers	   Controls visibility of code
+import	               Brings external classes into your code
