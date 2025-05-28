@@ -1,0 +1,101 @@
+Content to cover in this video
+What is Exception?
+What is Exception Explanation with example
+What is Exception Handling
+Why to handle the exception
+How to handle Exception in Java
+
+
+🎯 What is an Exception?
+An Exception is an unexpected or abnormal condition that occurs during the runtime of a program, which disrupts the normal flow of execution.
+
+🔥 Example:
+            int a = 10;
+            int b = 0;
+            int result = a / b; // This will throw ArithmeticException: / by zero
+
+This is not a compile-time error. The code compiles fine, but fails when it runs.
+
+🧠 Why Do Exceptions Occur?
+Common reasons:
+
+Dividing by zero
+Accessing a null object (NullPointerException)
+Array index out of bounds
+File not found
+Network issues
+These are runtime errors, not syntax errors.
+
+🛠️ What is Exception Handling?
+Exception Handling is a way to gracefully handle runtime errors so that the program doesn’t crash and can continue or exit properly.
+
+💡 Definition:
+Exception Handling is the process of responding to the occurrence of exceptions during program execution.
+
+
+❓ Why Handle Exceptions?
+To prevent program crashes
+To provide meaningful error messages
+To maintain normal program flow
+To handle unexpected situations safely
+🧰 Java Exception Handling Keywords
+Java provides several keywords to handle exceptions:
+
+
+Keyword	Purpose
+try	    Block of code to monitor for exceptions
+catch	Block that handles the exception
+finally	Block that always executes (cleanup code)
+throw	Used to explicitly throw an exception
+throws	Declares exceptions a method might throw
+
+
+🧬 Exception Class Hierarchy
+Throwable
+├── Exception (can be handled by programmer)
+│   ├── RuntimeException (unchecked)
+│   └── Other checked exceptions
+└── Error (cannot be handled, e.g., StackOverflowError)
+
+✅ How to Handle Exceptions in Java
+Example:
+        public class Example {
+            public static void main(String[] args) {
+                try {
+                    int a = 10, b = 0;
+                    int result = a / b;
+                    System.out.println(result);
+                } catch (ArithmeticException e) {
+                    System.out.println("Cannot divide by zero!");
+                } finally {
+                    System.out.println("This block always runs.");
+                }
+            }
+        }
+
+⚠️ Checked vs Unchecked Exceptions
+Type	    Description
+Checked	    Checked at compile-time (e.g., IOException, SQLException)
+Unchecked	Occur at runtime (e.g., ArithmeticException, NullPointerException)
+
+
+throws Keyword:
+Used to declare checked exceptions that a method might throw.
+
+public void readFile() throws IOException {
+    // code that might throw IOException
+}
+
+
+🧪 Summary Flow
+Source Code
+   ↓
+Compile Time
+   ↓
+Syntax Error? → Fix it
+   ↓
+Run Time
+   ↓
+Exception? → Handle it using try-catch
+   ↓
+Program continues or exits gracefully
