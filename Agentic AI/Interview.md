@@ -71,13 +71,16 @@ In this setup, one LLM generates a solution while another evaluates the output f
 
 ### Characteristics of Agents:
 #### 1. Open-ended: 
-    Agents operate without predetermined sequences, allowing them to adapt to various situations and queries. They can tackle a wide range of problems rather than following a fixed script.
+    Agents operate without predetermined sequences, allowing them to adapt to various situations and queries.
+    They can tackle a wide range of problems rather than following a fixed script.
 
 #### 2. Feedback loops: 
-    Agents utilize feedback from previous actions to improve future responses. This iterative process helps them learn and refine their approaches based on user interactions and environmental changes.
+    Agents utilize feedback from previous actions to improve future responses. 
+    This iterative process helps them learn and refine their approaches based on user interactions and environmental changes.
 
 #### 3. No fixed path: 
-    Unlike workflows that have a defined order, agents can take different routes to achieve their goals. This lack of a predetermined path allows for more flexible problem-solving.
+    Unlike workflows that have a defined order, agents can take different routes to achieve their goals. 
+    This lack of a predetermined path allows for more flexible problem-solving.
 
 ### Interaction Model:
     HUMAN -> LLM Call  ----Action---> <--Feedback--- Environment 
@@ -85,19 +88,23 @@ In this setup, one LLM generates a solution while another evaluates the output f
 
 ### Risks of Agent Framework:
 ####  1. Unpredictable path: 
-    Since agents do not have a fixed sequence of actions, the order and type of tasks they execute can vary greatly. This unpredictability can lead to unexpected results, making it challenging to control outcomes.
+    Since agents do not have a fixed sequence of actions, the order and type of tasks they execute can vary greatly.
+    This unpredictability can lead to unexpected results, making it challenging to control outcomes.
 
 #### 2. Unpredictable output: 
     An agent's responses can vary based on its learned experiences and environmental feedback, which means the output may not always be reliable or consistent.
 
 #### 3. Unpredictable costs: 
-    The dynamic nature of agents can result in varying operational costs. Since you can't predict how long an operation will take, expenses related to LLM calls can escalate unexpectedly.
+    The dynamic nature of agents can result in varying operational costs. 
+    Since you can't predict how long an operation will take, expenses related to LLM calls can escalate unexpectedly.
 
 #### 4. Monitor: 
     Continuous monitoring of agent interactions is crucial for understanding performance patterns and ensuring that the system operates within the desired parameters.
 
 #### 5. Guardrails: 
-    Implementing guardrails is necessary to keep agents aligned with intended behavior and objectives. These safeguards help mitigate risks associated with unpredictability, ensuring agents operate safely and consistently within predefined boundaries.
+    Implementing guardrails is necessary to keep agents aligned with intended behavior and objectives. 
+    These safeguards help mitigate risks associated with unpredictability, 
+    ensuring agents operate safely and consistently within predefined boundaries.
 
 
 Calling Multiple LLM's:
@@ -117,22 +124,30 @@ The cast of characters
 
 
 #### OpenAI - gpt-4o-mini (also gpt-4o, o1, o3-mini):
-    GPT-4o-mini is one of the more compact variants of OpenAI's GPT-4 model. It is well-known for its natural language processing capabilities and is often preferred when resources are limited or simplicity is preferred. The "o1" and "o3-mini" versions also provide various configurations tailored for specific tasks or performance requirements.
+    GPT-4o-mini is one of the more compact variants of OpenAI's GPT-4 model. 
+    It is well-known for its natural language processing capabilities and is often preferred when resources are limited or simplicity is preferred. 
+    The "o1" and "o3-mini" versions also provide various configurations tailored for specific tasks or performance requirements.
 
 #### Anthropic - Claude-3-7-Sonnet:
-    Claude is a model developed by Anthropic, a company formed by some former OpenAI engineers. Claude-3-7-Sonnet focuses on enhanced reasoning capabilities, making it suitable for tasks requiring critical thinking or more complex queries.
+    Claude is a model developed by Anthropic, a company formed by some former OpenAI engineers. 
+    Claude-3-7-Sonnet focuses on enhanced reasoning capabilities, making it suitable for tasks requiring critical thinking or more complex queries.
 
 #### Google - Gemini-2.0-flash:
-    Gemini-2.0-flash is part of Google's suite of AI models. While specifics can vary, Google’s models are often designed for fast processing speeds and integration into broader ecosystems, emphasizing their use in applications such as search and AI-driven responses.
+    Gemini-2.0-flash is part of Google's suite of AI models. While specifics can vary, 
+    Google’s models are often designed for fast processing speeds and integration into broader ecosystems, 
+    emphasizing their use in applications such as search and AI-driven responses.
 
 #### DeepSeek AI - DeepSeek V3, DeepSeek R1:
-    DeepSeek AI has developed its models with different focuses, with the versions indicating progress and enhancements in their architecture. These models could be adapted for various applications, depending on the intended task.
+    DeepSeek AI has developed its models with different focuses, with the versions indicating progress and enhancements in their architecture. 
+    These models could be adapted for various applications, depending on the intended task.
 
 #### Groq - Open-source LLMs including Llama3.3:
-    Groq is known for its contributions to open-source models, specifically Llama3.3. Open-source models allow for greater community engagement and customization, providing flexibility for developers.
+    Groq is known for its contributions to open-source models, specifically 
+    Llama3.3. Open-source models allow for greater community engagement and customization, providing flexibility for developers.
 
 #### Ollama - Local open-source LLMs including Llana3.2:
-    Ollama offers local versions of LLMs, such as Llana3.2, which can be run on personal servers or machines. This allows developers to utilize LLMs without relying on cloud-based solutions, offering privacy and control over data.
+    Ollama offers local versions of LLMs, such as Llana3.2, which can be run on personal servers or machines. 
+    This allows developers to utilize LLMs without relying on cloud-based solutions, offering privacy and control over data.
 
 Each model provides unique strengths and operational characteristics, helping practitioners choose the best fit depending on the application's specific requirements, computing resources, and cost considerations. This diversified landscape of LLMs showcases the evolving nature of AI technology and the options available for developers.
 
@@ -150,19 +165,25 @@ Agentic AI Frameworks:
  --------------   -----
  
 #### LangGraph: 
-    LangGraph is a sophisticated and powerful framework designed for complex AI architectures. It facilitates seamless integration between models and data sources without requiring extensive coding, allowing for a more dynamic and flexible setup. However, it's noted for being complex and may not suit every project, particularly those requiring lightweight solutions.
+    LangGraph is a sophisticated and powerful framework designed for complex AI architectures. 
+    It facilitates seamless integration between models and data sources without requiring extensive coding, allowing for a more dynamic and flexible setup.
+    However, it's noted for being complex and may not suit every project, particularly those requiring lightweight solutions.
 
 #### AutoGen: 
-    This framework combines various functionalities and is tailored to enhance agent interaction and performance. It is recognized as powerful and offers capabilities that allow developers to create efficient AI systems. AutoGen's flexibility enables it to support diverse use cases effectively.
+    This framework combines various functionalities and is tailored to enhance agent interaction and performance. 
+    It is recognized as powerful and offers capabilities that allow developers to create efficient AI systems. 
+    AutoGen's flexibility enables it to support diverse use cases effectively.
 
 #### OpenAI Agents SDK: 
     One of the simplest and cleanest frameworks, the OpenAI Agents SDK is lightweight and flexible, making it an excellent choice for developers who prefer minimal overhead. It is relatively new and has garnered appreciation for its elegant design. As mentioned by Ed Donner, it is suitable for production but requires developers to implement monitoring and guardrails.
 
 #### Crew AI: 
-    Crew AI is favored for its low-code approach, allowing developers to create agent solutions with ease through simple configurations. It strikes a balance between coding and user-friendliness, making it popular among users looking for effective yet straightforward implementations.
+    Crew AI is favored for its low-code approach, allowing developers to create agent solutions with ease through simple configurations. 
+    It strikes a balance between coding and user-friendliness, making it popular among users looking for effective yet straightforward implementations.
 
 #### No Framework: 
-    This category represents scenarios where developers might choose not to use a specific framework, thereby focusing on direct model interactions without added layers of complexity. This could be beneficial for specific tasks or prototypes that require simplicity.
+    This category represents scenarios where developers might choose not to use a specific framework, thereby focusing on direct model interactions without added layers of complexity. 
+    This could be beneficial for specific tasks or prototypes that require simplicity.
 
 #### MCP (Model Control Protocol): 
     Although not categorized strictly as a framework, MCP is essential for connecting agents to tools and resources, facilitating communication in a controlled manner, and enhancing the agent's capabilities.
@@ -173,7 +194,8 @@ Many, many more! Which to pick depends on the use case and your preference
 
 #### Resources:
     We can privde an LLM with resources to improve its expertise
-    Baiscally, this just means shoving data relevant to the question into the prompt.
+    Baiscally, 
+    this just means shoving data relevant to the question into the prompt.
 
 There are techniques like RAG to get really smart st picking relevant content.
 
