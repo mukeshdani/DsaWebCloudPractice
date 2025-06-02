@@ -19,7 +19,7 @@ Anthropic distinguishes two types:
 ### 1. Prompt Chaining:
 Decompose into fixed sub-tasks
 
-IN -> LLM1 -> Gate -> LLM2 -> LLM3 -> OUT
+                IN -> LLM1 -> Gate -> LLM2 -> LLM3 -> OUT
 
 This pattern involves setting up a sequence of LLM calls where the output of one model directly becomes the input for the next. This method ensures that tasks are precisely framed, allowing for accurate responses and maintaining a structured workflow. The speaker notes that while this behaves like a workflow, it can also show elements of autonomy since the initial LLM influences the subsequent tasks.
 
