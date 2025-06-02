@@ -26,34 +26,34 @@ This pattern involves setting up a sequence of LLM calls where the output of one
 ### 2. Routing:
 Direct an input into a specialized sub-task ensuring separation of concerns
 
-                -> LLM1
-IN -> LLM Route -> LLM2  -> OUT
-                -> LLM3
+                                -> LLM1
+                IN -> LLM Route -> LLM2  -> OUT
+                                -> LLM3
 
 In this design, an LLM decides which specialized model is best suited for a specific task. This separation allows different LLMs to utilize their unique expertise, effectively routing tasks to the right model. The speaker suggests that routing demonstrates autonomy as the router makes informed decisions based on incoming input.
 
 ### 3. Parallelization:
 Breaking down tasks and running multiple subtasks concurrently
 
-                  -> LLM1
-IN -> Coordinator -> LLM2  -> Aggregator -> OUT
-                  -> LLM3
+                                -> LLM1
+                IN -> Coordinator -> LLM2  -> Aggregator -> OUT
+                                -> LLM3
 
 This involves breaking a task into smaller components that can be executed simultaneously. Here, a code orchestrator manages the parallel execution across multiple LLMs, which might be applying different tasks or running the same task concurrently for more reliable results. The aggregation of these results showcases the effectiveness and efficiency of this approach.
 
 ### 4. Orchestrator-Worker:
 Complex tasks are broken down dynamically and combined
 
-                  -> LLM1
-IN -> Orchestrator -> LLM2  -> Synthesizer -> OUT
-                  -> LLM3
+                                -> LLM1
+                IN -> Orchestrator -> LLM2  -> Synthesizer -> OUT
+                                -> LLM3
 
 Similar to parallelization, this design pattern has an LLM functioning as an orchestrator, breaking down complex tasks and assigning subtasks to various LLMs. This model indicates a dynamic system where the orchestrator selects how tasks are distributed. The speaker highlights the overlap between workflows and agent patterns in this context.
 
 ### 5. Evaluator-Optimizer:
 LLM output is validated by another
 
-IN -> LLM Generator --Solution---> <---Rejected with feedback---LLM Evaluator --Accepted--> OUT 
+                IN -> LLM Generator --Solution---> <---Rejected with feedback---LLM Evaluator --Accepted--> OUT 
 
 In this setup, one LLM generates a solution while another evaluates the output for accuracy. The evaluator can accept or reject the work and provide feedback for improvement. This iterative feedback loop is essential for enhancing the reliability and quality of AI systems, making it a vital design pattern.
 
@@ -70,8 +70,8 @@ In this setup, one LLM generates a solution while another evaluates the output f
 3. No fixed path: Unlike workflows that have a defined order, agents can take different routes to achieve their goals. This lack of a predetermined path allows for more flexible problem-solving.
 
 ### Interaction Model:
-HUMAN -> LLM Call  ----Action---> <--Feedback--- Environment 
-           -> STOP
+                    HUMAN -> LLM Call  ----Action---> <--Feedback--- Environment 
+                            -> STOP
 
 ### Risks of Agent Framework:
 1. Unpredictable path: Since agents do not have a fixed sequence of actions, the order and type of tasks they execute can vary greatly. This unpredictability can lead to unexpected results, making it challenging to control outcomes.
