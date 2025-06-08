@@ -1,6 +1,8 @@
 
 # 🧠 LangChain Architecture and Agentic Frameworks
 
+![alt text](image.png)
+
 ---
 
 ## 📌 Chapter 1: What is LangChain?
