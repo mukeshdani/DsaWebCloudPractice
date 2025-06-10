@@ -5,28 +5,28 @@ AI agents are programs where LLM outputs control the workflow.
 
 In practice, it describes an AI solution that involves any or all of these:
 #### 1. Multiple LLM calls: 
-                 Solutions that involve multiple LLM calls.
+        Solutions that involve multiple LLM calls.
 #### 2. LLMs with ability to use tools:
-                 LLMs using tools to perform tasks (like controlling lights).
+        LLMs using tools to perform tasks (like controlling lights).
 #### 3. An environment where LLMs interact: 
-                 Environments where LLMs can communicate and coordinate.
+        Environments where LLMs can communicate and coordinate.
 #### 4. A planner to coordinate activities: 
-                The presence of a planner that organizes activities.
+        The presence of a planner that organizes activities.
 #### 5. Autonomy:
-                Autonomy, where LLMs can decide the order of their actions.
+        Autonomy, where LLMs can decide the order of their actions.
 
 ## Agentic System:
 Anthropic distinguishes two types:
 #### 1. Workflow:
-               Workflows where LLMs and tools are orchestrated through predefined code paths.
+        Workflows where LLMs and tools are orchestrated through predefined code paths.
 #### 2. Agents:  
-              Agents are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
+        Agents are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks.
 
 ## Workflow Design Patterns:
 ### 1. Prompt Chaining:
 Decompose into fixed sub-tasks
 
-                IN -> LLM1 -> Gate -> LLM2 -> LLM3 -> OUT
+         IN -> LLM1 -> Gate -> LLM2 -> LLM3 -> OUT
 
 This pattern involves setting up a sequence of LLM calls where the output of one model directly becomes the input for the next. This method ensures that tasks are precisely framed, allowing for accurate responses and maintaining a structured workflow. The speaker notes that while this behaves like a workflow, it can also show elements of autonomy since the initial LLM influences the subsequent tasks.
 
@@ -34,7 +34,7 @@ This pattern involves setting up a sequence of LLM calls where the output of one
 Direct an input into a specialized sub-task ensuring separation of concerns
 
                                 -> LLM1
-                IN -> LLM Route -> LLM2  -> OUT
+         IN -> LLM Route -> LLM2  -> OUT
                                 -> LLM3
 
 In this design, an LLM decides which specialized model is best suited for a specific task. This separation allows different LLMs to utilize their unique expertise, effectively routing tasks to the right model. The speaker suggests that routing demonstrates autonomy as the router makes informed decisions based on incoming input.
@@ -43,7 +43,7 @@ In this design, an LLM decides which specialized model is best suited for a spec
 Breaking down tasks and running multiple subtasks concurrently
 
                                 -> LLM1
-                IN -> Coordinator -> LLM2  -> Aggregator -> OUT
+          IN -> Coordinator -> LLM2  -> Aggregator -> OUT
                                 -> LLM3
 
 This involves breaking a task into smaller components that can be executed simultaneously. Here, a code orchestrator manages the parallel execution across multiple LLMs, which might be applying different tasks or running the same task concurrently for more reliable results. The aggregation of these results showcases the effectiveness and efficiency of this approach.
