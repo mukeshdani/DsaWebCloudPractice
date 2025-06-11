@@ -131,6 +131,38 @@
 
 ---
 
+# Fibre Channel (FC) in VMware vSphere
+
+In vSphere, Fibre Channel (FC) is used as a high-speed storage networking technology to connect servers to storage devices, creating a Storage Area Network (SAN). FC enables efficient data transfer, making it suitable for virtualized environments and enabling advanced features like vMotion and HA.
+
+## Key Aspects of FC in vSphere
+
+### VMFS Datastore
+- FC storage can be used to create VMFS datastores, which store virtual machine files, templates, and ISO images.
+
+### High-Speed Data Transfer
+- FC provides reliable and scalable data transfer, essential for the performance of virtualized workloads.
+
+### Advanced Features
+- FC supports advanced vSphere features like vMotion (live migration of virtual machines) and High Availability (HA).
+
+### NPIV
+- Fibre Channel NPIV (N-Port ID Virtualization) allows a single Fibre Channel adapter to appear as multiple unique entities on the FC fabric, enabling more efficient use of resources.
+
+### Direct Attach vs. SAN
+- While FC is typically used with SAN switches, it can also be used with direct-attached storage in smaller environments.
+
+### FC-NVMe
+- vSphere 7.0 and later supports NVMe over Fibre Channel (FC-NVMe) for faster storage access.
+
+### Storage Vendor Support
+- Storage vendors like NetApp, Oracle, and Pure Storage provide support and guidance for using FC with their storage systems.
+
+### Virtual SAN
+- You can configure virtual machines to use Fibre Channel NPIV, allowing multiple virtual Fibre Channel adapters per VM and associating each with a virtual SAN.
+
+### HBA Support
+- Ensure that your Fibre Channel Host Bus Adapter (HBA) is compatible with the storage system and supported by VMware.
 
 
 
