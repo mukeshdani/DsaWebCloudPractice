@@ -164,7 +164,35 @@ In vSphere, Fibre Channel (FC) is used as a high-speed storage networking techno
 ### HBA Support
 - Ensure that your Fibre Channel Host Bus Adapter (HBA) is compatible with the storage system and supported by VMware.
 
+---
 
+# VMware Tools
+
+VMware Tools is a suite of software utilities that enhances the performance and management of virtual machines running on VMware virtualization platforms like vSphere. It's not mandatory for a VM to function, but highly recommended for optimal performance and feature usage according to Broadcom and Altaro.
+
+## Key Benefits of Using VMware Tools
+
+### Improved Performance
+VMware Tools provides drivers for the virtual hardware, which allows the guest OS to access the virtual hardware efficiently. This leads to better mouse and graphics performance, as well as faster network speeds and sound.
+
+### Enhanced Functionality
+VMware Tools enables features like time synchronization between the host and guest OS, a shared clipboard, drag-and-drop functionality, and the ability to take quiesced snapshots of the guest OS.
+
+### Simplified Management
+VMware Tools facilitates easier management of the virtual machine, including features like scripted automation and passing messages between the host and guest OS.
+
+## How to Install VMware Tools
+
+1. **Access the vSphere Client**: Log in to the vSphere Client or vSphere Host Client.
+2. **Locate the VM**: Select the virtual machine on which you want to install VMware Tools.
+3. **Navigate to Guest OS Settings**: Go to Actions > Guest OS from the drop-down menu, then select "Install/Upgrade VMware Tools" according to Broadcom.
+4. **Follow the Installation Wizard**: The installation wizard will guide you through the process of installing VMware Tools within the guest OS according to Broadcom.
+5. **Restart the VM**: After the installation is complete, restart the virtual machine for the changes to take effect.
+
+## Where to Find VMware Tools
+
+- **vSphere Client/Host Client**: VMware Tools is usually available through the vSphere Client or vSphere Host Client, as mentioned in the installation steps according to Broadcom.
+- **ProductLocker**: ESXi hosts often store VMware Tools packages in a "ProductLocker" directory, which can be accessed according to Broadcom and a blog.
 
 
 
