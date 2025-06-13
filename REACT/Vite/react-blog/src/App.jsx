@@ -5,9 +5,11 @@ import Click from './ClickFunctionCalling'
 import State from './State'
 import Toogle from './ToogleORHideAndShow'
 import Props from './Props'
+import Props2 from './Props2'
 
 
 function App() {
+  let name = "Mukesh Dani"
 
   return (
     <>
@@ -18,7 +20,10 @@ function App() {
       {/* <Click /> */}
       {/* <State /> */}
       {/* <Toogle /> */}
-      <Props />
+      <Props2> 
+        <h1>More Props</h1>
+      </Props2>
+      <Props name = {name} />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
