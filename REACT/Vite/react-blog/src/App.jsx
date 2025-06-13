@@ -6,10 +6,11 @@ import State from './State'
 import Toogle from './ToogleORHideAndShow'
 import Props from './Props'
 import Props2 from './Props2'
-
+import Input from './GetInputFieldValue'
+import ControlledComp from './ControlledComp'
 
 function App() {
-  let name = "Mukesh Dani"
+  // let name = "Mukesh Dani"
 
   return (
     <>
@@ -20,10 +21,13 @@ function App() {
       {/* <Click /> */}
       {/* <State /> */}
       {/* <Toogle /> */}
-      <Props2> 
+      {/* <Props2> 
         <h1>More Props</h1>
       </Props2>
-      <Props name = {name} />
+      <Props name = {name} /> */}
+
+      {/* <Input /> */}
+      <ControlledComp />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
