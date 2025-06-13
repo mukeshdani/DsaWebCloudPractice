@@ -7,13 +7,24 @@ const app = express();
 /*👉 This line creates an instance of an Express application.
 You’ll use this app object to define routes, middleware, and server behavior.*/
 
-app.use("/test",(req,res)=>{
-    res.send("Hello form the server");
-})// this function is known as request handler
+// app.use("/test",(req,res)=>{
+//     res.send("Hello form the server");
+// })// this function is known as request handler
 
-app.use("/hello",(req,res)=>{
-    res.send("Hello Mukesh How are you!!!!!!!!!!!!!!!!");
-})
+// app.use("/hello",(req,res)=>{
+//     res.send("Hello Mukesh How are you!!!!!!!!!!!!!!!!");
+// })
+
+// app.use()-> this will match all the http method API call to /user
+
+app.get("/user", (req, res)=>{
+    res.send({firstname: "Mukesh Dani", age:24})
+})// app.use()-> this will match only the get http method API call to /user
+
+
+app.post("")
+
+
 
 app.listen(3000, ()=>{
     console.log("Server is successfully listening on port 3000....")
