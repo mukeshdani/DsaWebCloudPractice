@@ -19,6 +19,7 @@ import UseEffect2 from './Hooks/useEffect/useEffect2'
 import LifeCycle from './Hooks/Component Life Cycle/lifeCycle'
 import UseRef from './Hooks/useRef/UseRef'
 import Uncontrolled from './Uncontrolled Component/uncontrolled'
+import PassComp from './Pass Function In Component/passComp'
 
 
 function App() {
@@ -52,7 +53,8 @@ function App() {
 
       {/* <LifeCycle /> */}
       {/* <UseRef /> */}
-      <Uncontrolled />
+      {/* <Uncontrolled /> */}
+      <PassComp />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
