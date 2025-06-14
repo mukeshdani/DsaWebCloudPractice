@@ -9,6 +9,7 @@ import Props2 from './Props2'
 import Input from './GetInputFieldValue'
 import ControlledComp from './ControlledComp'
 import HandleCheckBox from './HandleCheckbox'
+import RadioAndDropdown from './HandleRadioDropdown'
 
 function App() {
   // let name = "Mukesh Dani"
@@ -29,7 +30,8 @@ function App() {
 
       {/* <Input /> */}
       {/* <ControlledComp /> */}
-      <HandleCheckBox />
+      {/* <HandleCheckBox /> */}
+      <RadioAndDropdown />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
