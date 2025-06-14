@@ -13,6 +13,8 @@ import RadioAndDropdown from './HandleRadioDropdown'
 import Loops from './loops'
 import ReUseLoop from './ReuseLoop'
 import Dropdown from './Clock/dropdown'
+import Looping from './Nested Looping/looping'
+
 
 function App() {
   // let name = "Mukesh Dani"
@@ -37,7 +39,9 @@ function App() {
       {/* <RadioAndDropdown /> */}
       {/* <Loops /> */}
       {/* <ReUseLoop /> */}
-      <Dropdown />
+      {/* <Dropdown /> */}
+
+      <Looping />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
