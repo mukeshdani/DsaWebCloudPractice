@@ -10,6 +10,7 @@ import Input from './GetInputFieldValue'
 import ControlledComp from './ControlledComp'
 import HandleCheckBox from './HandleCheckbox'
 import RadioAndDropdown from './HandleRadioDropdown'
+import Loops from './loops'
 
 function App() {
   // let name = "Mukesh Dani"
@@ -31,7 +32,8 @@ function App() {
       {/* <Input /> */}
       {/* <ControlledComp /> */}
       {/* <HandleCheckBox /> */}
-      <RadioAndDropdown />
+      {/* <RadioAndDropdown /> */}
+      <Loops />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
