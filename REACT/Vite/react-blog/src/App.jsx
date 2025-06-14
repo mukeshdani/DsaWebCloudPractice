@@ -15,6 +15,8 @@ import ReUseLoop from './ReuseLoop'
 import Dropdown from './Clock/dropdown'
 import Looping from './Nested Looping/looping'
 import UseEffect from './Hooks/useEffect/useEffect'
+import UseEffect2 from './Hooks/useEffect/useEffect2'
+
 
 function App() {
   // let name = "Mukesh Dani"
@@ -42,7 +44,8 @@ function App() {
       {/* <Dropdown /> */}
 
       {/* <Looping /> */}
-      <UseEffect />
+      {/* <UseEffect /> */}
+      <UseEffect2 />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
