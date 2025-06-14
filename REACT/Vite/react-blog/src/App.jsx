@@ -20,6 +20,7 @@ import LifeCycle from './Hooks/Component Life Cycle/lifeCycle'
 import UseRef from './Hooks/useRef/UseRef'
 import Uncontrolled from './Uncontrolled Component/uncontrolled'
 import PassComp from './Pass Function In Component/passComp'
+import ForwardRef from './ForwardRef/Forward'
 
 
 function App() {
@@ -54,7 +55,8 @@ function App() {
       {/* <LifeCycle /> */}
       {/* <UseRef /> */}
       {/* <Uncontrolled /> */}
-      <PassComp />
+      {/* <PassComp /> */}
+      <ForwardRef />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
