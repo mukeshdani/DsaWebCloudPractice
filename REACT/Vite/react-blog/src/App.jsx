@@ -16,6 +16,7 @@ import Dropdown from './Clock/dropdown'
 import Looping from './Nested Looping/looping'
 import UseEffect from './Hooks/useEffect/useEffect'
 import UseEffect2 from './Hooks/useEffect/useEffect2'
+import LifeCycle from './Hooks/Component Life Cycle/lifeCycle'
 
 
 function App() {
@@ -45,7 +46,9 @@ function App() {
 
       {/* <Looping /> */}
       {/* <UseEffect /> */}
-      <UseEffect2 />
+      {/* <UseEffect2 /> */}
+
+      <LifeCycle />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
