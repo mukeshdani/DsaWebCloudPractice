@@ -11,6 +11,8 @@ import ControlledComp from './ControlledComp'
 import HandleCheckBox from './HandleCheckbox'
 import RadioAndDropdown from './HandleRadioDropdown'
 import Loops from './loops'
+import ReUseLoop from './ReuseLoop'
+
 
 function App() {
   // let name = "Mukesh Dani"
@@ -33,7 +35,8 @@ function App() {
       {/* <ControlledComp /> */}
       {/* <HandleCheckBox /> */}
       {/* <RadioAndDropdown /> */}
-      <Loops />
+      {/* <Loops /> */}
+      <ReUseLoop />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
