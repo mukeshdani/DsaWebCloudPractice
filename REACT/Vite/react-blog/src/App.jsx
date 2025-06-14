@@ -18,6 +18,7 @@ import UseEffect from './Hooks/useEffect/useEffect'
 import UseEffect2 from './Hooks/useEffect/useEffect2'
 import LifeCycle from './Hooks/Component Life Cycle/lifeCycle'
 import UseRef from './Hooks/useRef/UseRef'
+import Uncontrolled from './Uncontrolled Component/uncontrolled'
 
 
 function App() {
@@ -50,7 +51,8 @@ function App() {
       {/* <UseEffect2 /> */}
 
       {/* <LifeCycle /> */}
-      <UseRef />
+      {/* <UseRef /> */}
+      <Uncontrolled />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
