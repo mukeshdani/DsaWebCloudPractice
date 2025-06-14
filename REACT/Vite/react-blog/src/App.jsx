@@ -8,6 +8,7 @@ import Props from './Props'
 import Props2 from './Props2'
 import Input from './GetInputFieldValue'
 import ControlledComp from './ControlledComp'
+import HandleCheckBox from './HandleCheckbox'
 
 function App() {
   // let name = "Mukesh Dani"
@@ -27,7 +28,8 @@ function App() {
       <Props name = {name} /> */}
 
       {/* <Input /> */}
-      <ControlledComp />
+      {/* <ControlledComp /> */}
+      <HandleCheckBox />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
