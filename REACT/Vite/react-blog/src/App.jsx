@@ -17,6 +17,7 @@ import Looping from './Nested Looping/looping'
 import UseEffect from './Hooks/useEffect/useEffect'
 import UseEffect2 from './Hooks/useEffect/useEffect2'
 import LifeCycle from './Hooks/Component Life Cycle/lifeCycle'
+import UseRef from './Hooks/useRef/UseRef'
 
 
 function App() {
@@ -48,7 +49,8 @@ function App() {
       {/* <UseEffect /> */}
       {/* <UseEffect2 /> */}
 
-      <LifeCycle />
+      {/* <LifeCycle /> */}
+      <UseRef />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
