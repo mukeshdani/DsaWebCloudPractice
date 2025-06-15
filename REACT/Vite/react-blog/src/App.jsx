@@ -23,6 +23,7 @@ import PassComp from './Pass Function In Component/passComp'
 import ForwardRef from './ForwardRef/Forward'
 import UseFormStatus from './useFormStatus/useFormStatus'
 import UseTransitionHook from './UseTransition/UseTransition'
+import Derived from './Derived/Derived'
 
 
 function App() {
@@ -60,7 +61,8 @@ function App() {
       {/* <PassComp /> */}
       {/* <ForwardRef /> */}
       {/* <UseFormStatus /> */}
-      <UseTransitionHook />
+      {/* <UseTransitionHook /> */}
+      <Derived />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
