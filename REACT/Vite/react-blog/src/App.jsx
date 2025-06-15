@@ -24,6 +24,7 @@ import ForwardRef from './ForwardRef/Forward'
 import UseFormStatus from './useFormStatus/useFormStatus'
 import UseTransitionHook from './UseTransition/UseTransition'
 import Derived from './Derived/Derived'
+import LiftingState from './Lifting State Up/Lifting'
 
 
 function App() {
@@ -62,7 +63,8 @@ function App() {
       {/* <ForwardRef /> */}
       {/* <UseFormStatus /> */}
       {/* <UseTransitionHook /> */}
-      <Derived />
+      {/* <Derived /> */}
+      <LiftingState/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
