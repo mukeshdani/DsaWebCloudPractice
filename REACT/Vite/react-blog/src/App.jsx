@@ -27,6 +27,7 @@ import Derived from './Derived/Derived'
 import LiftingState from './Lifting State Up/Lifting'
 import ObjectState from './Updating Object in State/updateObject'
 import UpdateArray from './Updating Array/updateArray'
+import UseActionState from './UseActionState/useActionState'
 
 
 function App() {
@@ -68,7 +69,8 @@ function App() {
       {/* <Derived /> */}
       {/* <LiftingState/> */}
       {/* <ObjectState /> */}
-      <UpdateArray />
+      {/* <UpdateArray /> */}
+      <UseActionState/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
