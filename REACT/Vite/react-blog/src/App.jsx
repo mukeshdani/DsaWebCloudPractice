@@ -31,6 +31,7 @@ import UseActionState from './Hooks/UseActionState/useActionState'
 import UseID from './Hooks/UseIDHook/useID'
 import ContextAPI from './ContextAPI/contextApi'
 import CustomHook from './Hooks/Custom Hooks/Custom'
+import Router from './Router/Router'
 
 
 function App() {
@@ -76,7 +77,8 @@ function App() {
       {/* <UseActionState/> */}
       {/* <UseID/> */}
       {/* <ContextAPI/> */}
-      <CustomHook/>
+      {/* <CustomHook/> */}
+      <Router/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
