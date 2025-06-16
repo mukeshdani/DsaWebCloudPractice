@@ -29,6 +29,7 @@ import ObjectState from './Updating Object in State/updateObject'
 import UpdateArray from './Updating Array/updateArray'
 import UseActionState from './Hooks/UseActionState/useActionState'
 import UseID from './Hooks/UseIDHook/useID'
+import ContextAPI from './ContextAPI/contextApi'
 
 
 function App() {
@@ -72,7 +73,8 @@ function App() {
       {/* <ObjectState /> */}
       {/* <UpdateArray /> */}
       {/* <UseActionState/> */}
-      <UseID/>
+      {/* <UseID/> */}
+      <ContextAPI/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
