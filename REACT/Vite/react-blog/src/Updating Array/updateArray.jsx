@@ -23,13 +23,17 @@ function UpdateArray(){
         setDataDetils([...dataDetails]);
         
     }
+
     return <div>
 
         <h4>Updating Array in ReactJS</h4>
+        
         <input type="text" placeholder="Enter last user name" onChange={(e)=>{handleUserDetail(e.target.value)}}></input>
+
         {
             data.map((item, index)=>{return <h3 key={index}>{item}</h3>})
         }
+
        <hr></hr>
 
         <input type="text" placeholder="Enter last user details" onChange={(e)=>{handleUserDetailedDetail(e.target.value)}}></input>
