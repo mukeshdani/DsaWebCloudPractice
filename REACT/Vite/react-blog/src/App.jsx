@@ -26,6 +26,7 @@ import UseTransitionHook from './UseTransition/UseTransition'
 import Derived from './Derived/Derived'
 import LiftingState from './Lifting State Up/Lifting'
 import ObjectState from './Updating Object in State/updateObject'
+import UpdateArray from './Updating Array/updateArray'
 
 
 function App() {
@@ -66,7 +67,8 @@ function App() {
       {/* <UseTransitionHook /> */}
       {/* <Derived /> */}
       {/* <LiftingState/> */}
-      <ObjectState />
+      {/* <ObjectState /> */}
+      <UpdateArray />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
