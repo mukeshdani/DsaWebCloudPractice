@@ -25,6 +25,7 @@ import UseFormStatus from './useFormStatus/useFormStatus'
 import UseTransitionHook from './UseTransition/UseTransition'
 import Derived from './Derived/Derived'
 import LiftingState from './Lifting State Up/Lifting'
+import ObjectState from './Updating Object in State/updateObject'
 
 
 function App() {
@@ -64,7 +65,8 @@ function App() {
       {/* <UseFormStatus /> */}
       {/* <UseTransitionHook /> */}
       {/* <Derived /> */}
-      <LiftingState/>
+      {/* <LiftingState/> */}
+      <ObjectState />
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
