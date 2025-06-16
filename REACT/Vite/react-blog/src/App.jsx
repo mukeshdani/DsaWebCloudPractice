@@ -32,6 +32,7 @@ import UseID from './Hooks/UseIDHook/useID'
 import ContextAPI from './ContextAPI/contextApi'
 import CustomHook from './Hooks/Custom Hooks/Custom'
 import Router from './Router/Router'
+import BasicPage from './Router/Detailed React-Router/BasicPage'
 
 
 function App() {
@@ -78,7 +79,8 @@ function App() {
       {/* <UseID/> */}
       {/* <ContextAPI/> */}
       {/* <CustomHook/> */}
-      <Router/>
+      {/* <Router/> */}
+      <BasicPage/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
