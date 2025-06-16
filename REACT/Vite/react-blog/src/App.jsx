@@ -30,6 +30,7 @@ import UpdateArray from './Updating Array/updateArray'
 import UseActionState from './Hooks/UseActionState/useActionState'
 import UseID from './Hooks/UseIDHook/useID'
 import ContextAPI from './ContextAPI/contextApi'
+import CustomHook from './Hooks/Custom Hooks/Custom'
 
 
 function App() {
@@ -74,7 +75,8 @@ function App() {
       {/* <UpdateArray /> */}
       {/* <UseActionState/> */}
       {/* <UseID/> */}
-      <ContextAPI/>
+      {/* <ContextAPI/> */}
+      <CustomHook/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
