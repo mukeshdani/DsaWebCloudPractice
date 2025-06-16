@@ -1,6 +1,15 @@
+import {Routes, Route, Link} from 'react-router'
+import Home from './Home'
+import About from './About'
 function Router(){
     return <>
-    <h4>React Router7 </h4>
+    <Link to="/">Home</Link>
+    <br />
+    <Link to="/about">About</Link>
+    <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/about" element={<About />}/>
+    </Routes>
     </>
 }
 
