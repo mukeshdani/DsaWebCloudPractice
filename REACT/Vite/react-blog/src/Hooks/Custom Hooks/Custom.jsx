@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import useToggle from "./useToggle"
 
 function CustomHook(){
