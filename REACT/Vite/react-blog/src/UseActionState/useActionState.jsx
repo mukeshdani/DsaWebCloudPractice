@@ -28,9 +28,9 @@ function UseActionState(){
         <h5>useActionState Hook</h5>
         
         <form action={action}>
-            <input type="text" placeholder="Enter Name" name="name"></input>
+            <input defaultValue={data?.name} type="text" placeholder="Enter Name" name="name"></input>
              <br />
-             <input type="password" placeholder="Enter Password" name="password"></input>
+             <input defaultValue={data?.password} type="password" placeholder="Enter Password" name="password"></input>
              <br /> <br />
              <button disabled={pending}>Submit Form</button>
              <br />
