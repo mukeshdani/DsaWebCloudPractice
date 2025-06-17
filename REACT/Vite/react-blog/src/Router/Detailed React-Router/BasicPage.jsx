@@ -8,6 +8,8 @@ import College from "./College"
 import Student from "./Student"
 import Department from "./Department"
 import CollegeDetail from "./CollegeDetails"
+import UsersList from "./UsersList"
+import UserDeatils from "./UserDetails"
 
 function BasicPage() {
   return (
@@ -15,14 +17,20 @@ function BasicPage() {
       {/* <NavBar /> */}
 
       <Routes>
+
         <Route element={<NavBar />}>
           <Route path="/" element={<Home />} />
           <Route path="/user">
-               <Route path="/user/login" element={<Login />} />
-               <Route path="/user/about" element={<About />} />
+            <Route path="/user/login" element={<Login />} />
+            <Route path="/user/about" element={<About />} />
           </Route>
-          
+
+
+          <Route path='/users' element={<UsersList />}>
+          </Route>
+          <Route path ='/users/:id' element={<UserDeatils/>}/>
         </Route>
+
 
 
         <Route path="/college" element={<College />}>
@@ -53,7 +61,7 @@ export default BasicPage
 // Routes: Its responsible for rendering the approprite component based on the current URL
 // route: Each Route component defines a path and the corresponding component to render when that path is matched
 // Link: A link for navigate from 1 page to other page
-// 
+//
 
 // Outlet:Outlet: Multi-Level Nested Routing
 // The <Outlet /> component is used in a parent route to render child routes. It acts as a placeholder.
@@ -73,3 +81,13 @@ export default BasicPage
 // 4. Page Not Found Route
 // To handle undefined routes, use a wildcard (*) path.
 // // Page Not Found Page
+
+// Dynamic Routes: Dynamic Routes allow you to create routes that can accept parameters in the URL.
+// These parameters can be used to render content dynamically based on the value in the URL.
+// useParams: useParams is a React Router hook that lets you access the dynamic parameters from the current URL.
+
+// React Router Optional Segment
+// what is Optional Segment
+// static optional segment
+// dynamic optional segment
+
