@@ -4,18 +4,29 @@ import About from "./About"
 import Login from "./Login"
 import NavBar from "./NavBar"
 import PageNotFound from "./PageNotFound"
+import College from "./College"
+import Student from "./Student"
+import Department from "./Department"
+import CollegeDetail from "./CollegeDetails"
 
 function BasicPage(){
-    return <>
-       <NavBar />
-       <Routes>
-         <Route path="/" element = {<Home/>}/>
-         <Route path="/about" element = {<About />}/>
-         <Route path="/login" element = {<Login/>}/>
-         {/* <Route path="/*" element = {<PageNotFound/>}/> */}
-         <Route path="/*" element = {<Navigate to='/login'/>}/>
-       </Routes>
-    </>
+return (
+  <>
+    <NavBar />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/college" element={<College />}>
+        <Route path="student" element={<Student />} />
+        <Route path="details" element={<CollegeDetail />} />
+        <Route path="department" element={<Department />} />
+      </Route>
+      {/* <Route path="/*" element = {<PageNotFound/>}/> */}
+      <Route path="/*" element={<Navigate to="/login" />} />
+    </Routes>
+  </>
+);
 }
 
 export default BasicPage
