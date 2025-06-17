@@ -24,11 +24,9 @@ function BasicPage() {
             <Route path="/user/login" element={<Login />} />
             <Route path="/user/about" element={<About />} />
           </Route>
-
-
-          <Route path='/users' element={<UsersList />}>
+          <Route path='/users/list?' element={<UsersList />}>
           </Route>
-          <Route path ='/users/:id' element={<UserDeatils/>}/>
+          <Route path ='/users/:id/:name?' element={<UserDeatils/>}/>
         </Route>
 
 
@@ -38,8 +36,8 @@ function BasicPage() {
           <Route path="details" element={<CollegeDetail />} />
           <Route path="department" element={<Department />} />
         </Route>
-        {/* <Route path="/*" element = {<PageNotFound/>}/> */}
-        <Route path="/*" element={<Navigate to="/login" />} />
+        <Route path="/*" element = {<PageNotFound/>}/>
+        {/* <Route path="/*" element={<Navigate to="/login" />} /> */}
       </Routes>
     </>
   );

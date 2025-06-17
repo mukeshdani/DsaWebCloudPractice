@@ -10,9 +10,18 @@ export default function UsersList() {
     return <div style={{ margin: "20px" }}>
         <h3>Users List Page</h3>
         {
-            userData.map((item) => {
-                return (<div>
+            userData.map((item, index) => {
+                return (<div key={index}>
                     <h4><Link to ={"/users/"+item.id}>{item.name}</Link></h4>
+                </div>)
+            })
+        }
+
+        <h3>Users List Page with Name in URL</h3>
+        {
+            userData.map((item, index) => {
+                return (<div key={index}>
+                    <h4><Link to ={"/users/"+item.id + "/" + item.name}>{item.name}</Link></h4>
                 </div>)
             })
         }
