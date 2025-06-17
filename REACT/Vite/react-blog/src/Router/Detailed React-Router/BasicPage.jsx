@@ -86,6 +86,11 @@ export default BasicPage
 
 // React Router Optional Segment
 // what is Optional Segment
-// static optional segment
-// dynamic optional segment
+// static optional segment: A static optional segment is a fixed part of the URL that may or may not appear.
+// dynamic optional segment: A dynamic optional segment is a variable part of the URL that may or may not be present.
+
+// React Router NavLink and Active Class
+// What is NavLink: Navigation Link 
+// Difference between NavLink and Link: NavLink give or provide Active Class
+// Apply Active Class
 

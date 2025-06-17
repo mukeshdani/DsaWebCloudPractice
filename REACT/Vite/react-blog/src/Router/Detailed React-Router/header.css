@@ -39,3 +39,12 @@ body{
     margin: 10px;
     
 }
+.active{
+    font-weight: 800;
+    color: rgb(71, 135, 172);
+}
+
+.custom-active{
+    font-size: 900;
+    color: brown;
+}
