@@ -9,31 +9,36 @@ import Student from "./Student"
 import Department from "./Department"
 import CollegeDetail from "./CollegeDetails"
 
-function BasicPage(){
-return (
-  <>
-    <NavBar />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/college" element={<College />}>
-        <Route path="student" element={<Student />} />
-        <Route path="details" element={<CollegeDetail />} />
-        <Route path="department" element={<Department />} />
-      </Route>
-      {/* <Route path="/*" element = {<PageNotFound/>}/> */}
-      <Route path="/*" element={<Navigate to="/login" />} />
-    </Routes>
-  </>
-);
+function BasicPage() {
+  return (
+    <>
+      {/* <NavBar /> */}
+
+      <Routes>
+        <Route element={<NavBar />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/about" element={<About />} />
+        </Route>
+
+
+        <Route path="/college" element={<College />}>
+          <Route index element={<Student />} />
+          <Route path="details" element={<CollegeDetail />} />
+          <Route path="department" element={<Department />} />
+        </Route>
+        {/* <Route path="/*" element = {<PageNotFound/>}/> */}
+        <Route path="/*" element={<Navigate to="/login" />} />
+      </Routes>
+    </>
+  );
 }
 
 export default BasicPage
 
 // Basic Pages with react-router
 // what is BrowserRouter
-// what is Routes 
+// what is Routes
 // what is Route
 // What is Link
 // Make basic Pages
@@ -43,7 +48,7 @@ export default BasicPage
 // what is BrowserRouter
 // BrowserRouter: This component enable clent-side routing using the browser's history API
 // Routes: Its responsible for rendering the approprite component based on the current URL
-// route: Each Route component defines a path and the corresponding component to render when that path is matched 
+// route: Each Route component defines a path and the corresponding component to render when that path is matched
 // Link: A link for navigate from 1 page to other page
 // 
 
