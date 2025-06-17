@@ -1,4 +1,4 @@
-import './App.css'
+// import './App.css'
 import Header from './Header'
 import {Login, Profile, Setting} from './UserComponent'
 import Click from './ClickFunctionCalling'
