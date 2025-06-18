@@ -33,6 +33,7 @@ import ContextAPI from './ContextAPI/contextApi'
 import CustomHook from './Hooks/Custom Hooks/Custom'
 import Router from './Router/Router'
 import BasicPage from './Router/Detailed React-Router/BasicPage'
+import UseMemo from './Hooks/useMemo/useMemo'
 
 
 function App() {
@@ -80,7 +81,8 @@ function App() {
       {/* <ContextAPI/> */}
       {/* <CustomHook/> */}
       {/* <Router/> */}
-      <BasicPage/>
+      {/* <BasicPage/> */}
+      <UseMemo/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
