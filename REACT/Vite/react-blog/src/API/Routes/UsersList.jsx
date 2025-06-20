@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function UsersList() {
   const [userData, setUserData] = useState([]);
   const [loading, setLoading] = useState(false);
-
+  const navigate = useNavigate()
   const getUserData = async () => {
     try {
       const response = await fetch("http://localhost:3000/users");
@@ -26,6 +27,10 @@ export default function UsersList() {
       console.error("Error deleting user:", error);
     }
   };
+
+  const editUser = async(id)=>{
+    navigate("/edit/"+id)
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -54,6 +59,9 @@ export default function UsersList() {
                 <td>
                   <button onClick={() => deleteUser(user.id)} style={{ cursor: "pointer" }}>
                     Delete
+                  </button>
+                  <button onClick={() => editUser(user.id)} style={{ cursor: "pointer" }}>
+                    Edit
                   </button>
                 </td>
               </tr>
