@@ -1,34 +1,22 @@
 {
   "users": [
     {
-      "name": "Mukesh Dani",
-      "age": 24,
-      "city": "Ramnagar",
-      "id": "9d24"
-    },
-    {
-      "name": "Suraj Dani",
-      "age": 28,
-      "city": "Ramnagar",
-      "id": "4d19"
-    },
-    {
-      "name": "Anshuman Dani",
-      "age": 24,
-      "city": "Ramnagar",
-      "id": "996f"
-    },
-    {
-      "id": "7776",
-      "name": "Mukesh Dani",
-      "age": "24",
-      "email": "mukesh@gmail.com"
-    },
-    {
       "id": "0058",
       "name": "testing ",
       "age": "222",
       "email": "testing@gmail.com"
+    },
+    {
+      "id": "ba3e",
+      "name": "Mukesh Dani",
+      "age": "11",
+      "email": "hgjknl"
+    },
+    {
+      "id": "097f",
+      "name": "Test2",
+      "age": "22",
+      "email": "test2@gmail.com"
     }
   ]
 }

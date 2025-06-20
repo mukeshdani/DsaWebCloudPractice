@@ -16,6 +16,17 @@ export default function UsersList() {
     }
   };
 
+  const deleteUser = async (id) => {
+    try {
+      await fetch(`http://localhost:3000/users/${id}`, {
+        method: "DELETE",
+      });
+      setUserData((prevData) => prevData.filter((user) => user.id !== id));
+    } catch (error) {
+      console.error("Error deleting user:", error);
+    }
+  };
+
   useEffect(() => {
     setLoading(true);
     getUserData();
@@ -27,14 +38,30 @@ export default function UsersList() {
       {loading ? (
         <h5>Data Loading...</h5>
       ) : userData.length > 0 ? (
-        userData.map((user, index) => (
-          <div key={index} style={{ marginBottom: "10px" }}>
-            <h4>{user.name}</h4>
-          </div>
-        ))
+        <table border="1" cellPadding="10" style={{ borderCollapse: "collapse", width: "100%" }}>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {userData.map((user) => (
+              <tr key={user.id}>
+                <td>{user.name}</td>
+                <td>{user.age}</td>
+                <td>
+                  <button onClick={() => deleteUser(user.id)} style={{ cursor: "pointer" }}>
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       ) : (
         <h5>No users found.</h5>
       )}
-    </div>
-  );
+    </div>)
 }
