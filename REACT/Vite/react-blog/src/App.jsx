@@ -36,6 +36,7 @@ import BasicPage from './Router/Detailed React-Router/BasicPage'
 import UseMemo from './Hooks/useMemo/useMemo'
 import UseCallBack from './Hooks/useCallBack/useCallBack'
 import GET from './API/get'
+import GetUsersData from './API/getUserData'
 
 
 function App() {
@@ -86,7 +87,8 @@ function App() {
       {/* <BasicPage/> */}
       {/* <UseMemo/> */}
       {/* <UseCallBack/> */}
-      <GET/>
+      {/* <GET/> */}
+      <GetUsersData/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>

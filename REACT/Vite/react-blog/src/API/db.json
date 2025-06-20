@@ -1,0 +1,17 @@
+{
+    "users":[
+        {"name":"Mukesh Dani",
+          "age":24,
+          "city": "Ramnagar"
+        },
+        {"name":"Suraj Dani",
+          "age":28,
+          "city": "Ramnagar"
+        },
+        {"name":"Anshuman Dani",
+          "age":24,
+          "city": "Ramnagar"
+        }
+    ]
+}
+
