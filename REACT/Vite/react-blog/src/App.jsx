@@ -37,6 +37,7 @@ import UseMemo from './Hooks/useMemo/useMemo'
 import UseCallBack from './Hooks/useCallBack/useCallBack'
 import GET from './API/get'
 import GetUsersData from './API/getUserData'
+import UserAPP from './API/Routes/UserAPP'
 
 
 function App() {
@@ -88,7 +89,8 @@ function App() {
       {/* <UseMemo/> */}
       {/* <UseCallBack/> */}
       {/* <GET/> */}
-      <GetUsersData/>
+      {/* <GetUsersData/> */}
+      <UserAPP/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
