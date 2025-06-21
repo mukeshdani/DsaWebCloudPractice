@@ -39,6 +39,7 @@ import GET from './API/get'
 import GetUsersData from './API/getUserData'
 import UserAPP from './API/Routes/UserAPP'
 import Validation from './Validation/validation'
+import UseReducerHook from './Hooks/useReducer Hook/reducer'
 
 
 function App() {
@@ -92,7 +93,8 @@ function App() {
       {/* <GET/> */}
       {/* <GetUsersData/> */}
       {/* <UserAPP/> */}
-      <Validation/>
+      {/* <Validation/> */}
+      <UseReducerHook/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
