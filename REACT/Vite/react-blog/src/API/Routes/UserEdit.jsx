@@ -1,21 +1,21 @@
-import {useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 
 export default function UserEdit() {
     const [name, setName] = useState("");
-      const [age, setAge] = useState("");
-      const [email, setEmail] = useState("");
+    const [age, setAge] = useState("");
+    const [email, setEmail] = useState("");
 
-      const navigate = useNavigate()
-    const {id} = useParams();
-    useEffect(()=>{getUserData()},[])
-   const getUserData = async()=>{
-       let response = await fetch(`http://localhost:3000/users/${id}`)
-       response = await response.json();
-       console.log(response)
-       setName(response.name)
-       setAge(response.age)
-       setEmail(response.email)
+    const navigate = useNavigate()
+    const { id } = useParams();
+    useEffect(() => { getUserData() }, [])
+    const getUserData = async () => {
+        let response = await fetch(`http://localhost:3000/users/${id}`)
+        response = await response.json();
+        console.log(response)
+        setName(response.name)
+        setAge(response.age)
+        setEmail(response.email)
     }
 
 
@@ -53,17 +53,17 @@ export default function UserEdit() {
         }
     };
 
-    const updateUserData = async ()=>{
+    const updateUserData = async () => {
         console.log(name, age, email)
         let response = await fetch(`http://localhost:3000/users/${id}`, {
-            method:"Put",
-            body: JSON.stringify({name, age, email})
+            method: "Put",
+            body: JSON.stringify({ name, age, email })
         })
 
         response = await response.json()
         console.log(response)
 
-        if(response){
+        if (response) {
             alert("User Data Updated...")
             navigate("/")
         }
@@ -72,16 +72,16 @@ export default function UserEdit() {
     return (
         <div style={styles.container}>
             <h4>User Edit Page</h4>
-            <input type="text" value={name} onChange={(e)=>{
+            <input type="text" value={name} onChange={(e) => {
                 setName(e.target.value)
             }} placeholder="User Name" style={styles.input} />
             <br /><br />
-            <input onChange={(e)=>{setEmail(e.target.value)}} type="email" value={email} placeholder="User Email" style={styles.input} />
+            <input onChange={(e) => { setEmail(e.target.value) }} type="email" value={email} placeholder="User Email" style={styles.input} />
             <br /><br />
-            <input onChange={(e)=>{setAge(e.target.value)}} type="number"value={age} placeholder="User Age" style={styles.input} />
+            <input onChange={(e) => { setAge(e.target.value) }} type="number" value={age} placeholder="User Age" style={styles.input} />
             <br /><br />
             <button
-            onClick={updateUserData}
+                onClick={updateUserData}
                 style={styles.button}
                 onMouseOver={e => e.target.style.backgroundColor = styles.buttonHover.backgroundColor}
                 onMouseOut={e => e.target.style.backgroundColor = styles.button.backgroundColor}
