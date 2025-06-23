@@ -42,6 +42,7 @@ import Validation from './Validation/validation'
 import UseReducerHook from './Hooks/useReducer Hook/reducer'
 import LazyLoading from './Lazy Loading/lazy'
 import UseAPI from './use API/useAPI'
+import ProbsRev from './Redux/PropsRev'
 
 function App() {
   // let name = "Mukesh Dani"
@@ -97,7 +98,8 @@ function App() {
       {/* <Validation/> */}
       {/* <UseReducerHook/> */}
       {/* <LazyLoading/> */}
-          <UseAPI/>
+          {/* <UseAPI/> */}
+      <ProbsRev/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
