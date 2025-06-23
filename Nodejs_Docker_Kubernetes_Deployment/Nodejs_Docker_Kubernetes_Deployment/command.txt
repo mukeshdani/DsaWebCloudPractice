@@ -28,11 +28,11 @@ The layered build process optimizes caching (faster rebuilds).
 .dockerignore improves efficiency by excluding unnecessary files.
 
 Pushing the Image to Docker Hub
-docker login -u dipeshlohar348@gmail.com
+docker login -u ---------@gmail.com
 password: 
 
-docker tag node-k8s-demo dipeshlohar348/node-k8s-demo:1.0
-docker push dipeshlohar348/node-k8s-demo:1.0
+docker tag node-k8s-demo --------------/node-k8s-demo:1.0
+docker push -----------------/node-k8s-demo:1.0
 
 Key Takeaways:
 Docker Hub acts as a central repository for container images.
@@ -47,7 +47,7 @@ Creates a local Kubernetes cluster for testing.
 
 create deployment.yaml using command
 # Generate deployment.yaml (then modify as needed)
-kubectl create deployment node-k8s-demo --image=dipeshlohar348/node-k8s-demo:1.0 --dry-run=client -o yaml > deployment.yaml
+kubectl create deployment node-k8s-demo --image=------------/node-k8s-demo:1.0 --dry-run=client -o yaml > deployment.yaml
 
 # Generate service.yaml (then modify as needed)
 kubectl expose deployment node-k8s-demo --port=80 --target-port=3000 --type=LoadBalancer --dry-run=client -o yaml > service.yaml
