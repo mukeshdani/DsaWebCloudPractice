@@ -43,6 +43,7 @@ import UseReducerHook from './Hooks/useReducer Hook/reducer'
 import LazyLoading from './Lazy Loading/lazy'
 import UseAPI from './use API/useAPI'
 import ProbsRev from './Redux/PropsRev'
+import ReduxApp from './Redux/App'
 
 function App() {
   // let name = "Mukesh Dani"
@@ -99,7 +100,8 @@ function App() {
       {/* <UseReducerHook/> */}
       {/* <LazyLoading/> */}
           {/* <UseAPI/> */}
-      <ProbsRev/>
+      {/* <ProbsRev/> */}
+      <ReduxApp/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>

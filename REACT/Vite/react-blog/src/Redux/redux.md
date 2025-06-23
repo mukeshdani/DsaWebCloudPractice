@@ -137,5 +137,12 @@ ReactDOM.render(
 Why we need it?
 Probs:
 
+File and Folder Structure
 
+component
+containers
+servise
+    action 
+    reducers
+    constants
 
