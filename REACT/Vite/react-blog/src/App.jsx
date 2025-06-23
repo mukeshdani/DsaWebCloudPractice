@@ -41,6 +41,7 @@ import UserAPP from './API/Routes/UserAPP'
 import Validation from './Validation/validation'
 import UseReducerHook from './Hooks/useReducer Hook/reducer'
 import LazyLoading from './Lazy Loading/lazy'
+import UseAPI from './use API/useAPI'
 
 function App() {
   // let name = "Mukesh Dani"
@@ -95,7 +96,8 @@ function App() {
       {/* <UserAPP/> */}
       {/* <Validation/> */}
       {/* <UseReducerHook/> */}
-      <LazyLoading/>
+      {/* <LazyLoading/> */}
+          <UseAPI/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
