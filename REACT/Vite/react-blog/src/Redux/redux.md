@@ -146,3 +146,27 @@ servise
     reducers
     constants
 
+What is action
+Make function file
+Return data and type
+Add constant and use constant in action
+
+action send data from react compoennet to redux store
+
+
+What is reducer:
+action se reducer mai data jayega and then reducer filter krega and send to store 
+
+container
+ connect redux with react
+ import react-redux, action and component
+ use mapDispatchToProps
+ use mapStateToProps 
+
+Complete Redux Flow
+  Make Redux wrapper in index file 
+  WHat is provider 
+  Make Store
+  Check Data flow in console
+  Call Action on button click
+
