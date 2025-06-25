@@ -8,6 +8,20 @@
             "type": "java",
             "name": "main",
             "request": "launch",
+            "mainClass": "JAVA.Sorting.CyclicSort.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
+            "mainClass": "JAVA.Sorting.InsertionSortAlgorithm.main",
+            "projectName": "Practical_20bba4fe"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
             "mainClass": "JAVA.Sorting.SelectionSortAlgorithm.main",
             "projectName": "Practical_20bba4fe"
         },
