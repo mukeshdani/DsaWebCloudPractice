@@ -8,6 +8,13 @@
             "type": "java",
             "name": "main",
             "request": "launch",
+            "mainClass": "main",
+            "projectName": "Practical_c3380367"
+        },
+        {
+            "type": "java",
+            "name": "main",
+            "request": "launch",
             "mainClass": "JAVA.Sorting.CyclicSort.main",
             "projectName": "Practical_20bba4fe"
         },

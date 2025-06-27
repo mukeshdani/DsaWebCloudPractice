@@ -44,6 +44,7 @@ import LazyLoading from './Lazy Loading/lazy'
 import UseAPI from './use API/useAPI'
 import ProbsRev from './Redux/PropsRev'
 import ReduxApp from './Redux/App'
+import CheckBox from './Interview/checkbox'
 
 function App() {
   // let name = "Mukesh Dani"
@@ -101,7 +102,8 @@ function App() {
       {/* <LazyLoading/> */}
           {/* <UseAPI/> */}
       {/* <ProbsRev/> */}
-      <ReduxApp/>
+      {/* <ReduxApp/> */}
+        <CheckBox/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
