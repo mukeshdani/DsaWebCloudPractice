@@ -1,0 +1,22 @@
+# Use Node.js official image
+FROM node:18
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Change ownership to non-root user
+RUN chown -R node:node /usr/src/app
+
+# Switch to non-root user
+USER node
+
+# Install dependencies
+COPY --chown=node:node package*.json ./
+RUN npm install
+
+# Copy app source
+COPY --chown=node:node . .
+
+# Expose port and start app
+EXPOSE 3000
+CMD ["npm", "start"]
