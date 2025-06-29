@@ -9,3 +9,5 @@ const purchase_book = ()=>{
         type: buyBook
     }
 }
+
+export default purchase_book
