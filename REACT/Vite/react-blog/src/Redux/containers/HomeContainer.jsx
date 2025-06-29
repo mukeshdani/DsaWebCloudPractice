@@ -1,6 +1,8 @@
 import Home from '../components/Home'
 import {connect} from 'react-redux'
-import {addToCart} from '../service/actions/actions'
+// import {addToCart} from '../service/actions/actions'
+
+import {addToCart} from '../services/Actions/actions'
 
 // eslint-disable-next-line no-unused-vars
 const mapStateToProps=state=>({

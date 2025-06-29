@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 // Action Creator 
 // which is a function return an object 
 

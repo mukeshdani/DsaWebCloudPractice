@@ -45,6 +45,7 @@ import UseAPI from './use API/useAPI'
 import ProbsRev from './Redux/PropsRev'
 import ReduxApp from './Redux/App'
 import CheckBox from './Interview/checkbox'
+import AppStoreRedux from './Redux/BookStoreAPP/appStoreRedux'
 
 function App() {
   // let name = "Mukesh Dani"
@@ -103,7 +104,8 @@ function App() {
           {/* <UseAPI/> */}
       {/* <ProbsRev/> */}
       {/* <ReduxApp/> */}
-        <CheckBox/>
+        {/* <CheckBox/> */}
+        <AppStoreRedux/>
       {/* <h1>Hello Mukesh </h1>
       <h1>Hello React 19 </h1> */}
     </>
