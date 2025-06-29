@@ -1,10 +1,14 @@
-import HomeContainer from './containers/HomeContainer'
 import './App.css';
-
-function ReduxApp(){
-    return <div>
-        <HomeContainer />
+import HomeContainer from './containers/HomeContainer'
+import HeaderContainer from './containers/HeaderContainer'
+function App() {
+  return (
+    <div className="App">
+      <HeaderContainer />
+     
+      <HomeContainer />
     </div>
+  );
 }
 
-export default ReduxApp
+export default App;
