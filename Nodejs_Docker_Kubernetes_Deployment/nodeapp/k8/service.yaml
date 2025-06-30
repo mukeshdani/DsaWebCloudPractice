@@ -4,10 +4,10 @@ metadata:
   name: node-dev-app
   namespace: sandbox-app
 spec:
-  type: LoadBalancer
   selector:
     app: node-dev-app
+  type: NodePort
   ports:
-    - protocol: TCP
-      port: 80
+    - port: 80
       targetPort: 3000
+      nodePort: 30080
