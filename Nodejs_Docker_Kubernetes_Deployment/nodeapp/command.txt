@@ -97,3 +97,13 @@ kubectl get endpoints node-k8s-demo-service
 Login to Vsphere k8
 
 kubectl.exe vsphere login --server=https://10.80.99.5 --insecure-skip-tls-verify --tanzu-kubernetes-cluster-name=tkg-cluster-node --tanzu-kubernetes-cluster-namespace=sandbox-app
+
+
+
+
+
+kubectl config set-context --current --namespace=sandbox-app
+
+
+kubectl get nodes -o wide
+curl http://10.80.100.60:30080
