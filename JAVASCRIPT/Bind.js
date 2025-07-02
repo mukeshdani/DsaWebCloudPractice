@@ -40,5 +40,10 @@ function add(a, b) {
 const add5 = add.myBind(null, 5);
 console.log(add5(10)); // 15
 
+
+
+
 var greetJohn = greet.myBind(person, 'Hello from myBind Method');
 greetJohn('!'); // Hello, John!    
+
+
