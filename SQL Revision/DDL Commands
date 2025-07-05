@@ -1,0 +1,24 @@
+CREATE TABLE employeeDetails (
+    id INT,
+    name VARCHAR(20),
+    email VARCHAR(20),
+    salary NUMBER(10)
+);
+
+desc employeeDetails;
+
+Alter table employeeDetails add (address VARCHAR(10))
+
+ALTER table employeeDetails drop column address;
+
+ALTER table employeeDetails modify id VARCHAR(10);
+
+ALTER table employeeDetails modify id VARCHAR(20);
+
+alter table employeeDetails rename column id to roleNumebr;
+
+alter table employeeDetails rename column name to newName;
+
+alter table employeeDetails add primary key (roleNumebr);
+
+desc employeeDetails;
