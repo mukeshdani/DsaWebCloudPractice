@@ -42,4 +42,3 @@ desc employeeDetails;
 
 -- UPDATE affects the data stored in the table.
 -- → It does not change the table’s structure.
-
