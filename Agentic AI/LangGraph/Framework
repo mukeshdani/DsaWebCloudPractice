@@ -1,0 +1,590 @@
+Agentic ai framework:
+
+frameworks for building ai systems that can think, make decisiob abd take actions
+
+How to build AI system.
+Language Model
+Memory 
+Too Use
+Task Planning
+
+How to build AI System?
+
+Popular Framework:
+LangChain
+LangGraph
+crewai
+phidata (Agno)
+
+LangGraph:
+What is LangGraph?
+Opensource framework for LLM Based Action
+
+__start___ 
+    |
+user_input
+database query
+response_generator         web search 
+                         response_generator           Human Ggent 
+                         ___end____
+
+Three main:
+Node: user_input node1, database_query, websearch, action or tool we call Node
+Edge: connections, 
+State: Information store (old and new)
+        State1 , State2
+
+Why is state managemnet is important?
+Example1: chatBot knows the context.
+State stores the information.
+
+Workflow: 
+
+LangGraph is specifically designed for somplex workflows, which inculdes.
+-Branching logic
+-Fallback Mechanisms
+-Multi-Step Decision
+
+Branching logic?
+Fallback Mechanisms? backup plan/Alternative solution
+Multi-Step Decision? Complex task convert into small task.
+
+What is the differnec between langChain and LangGraph?
+
+Building a basic chatbot using LangGraph?
+
+First understand below terms:
+Node:
+Edge:
+State: Memory
+State Machine:
+
+What is state machine?
+decision maker
+it control all nodes
+how to decide: state machine used edges
+
+pip installl --upgrade langchain langchian-community langgraph
+pip install langchain-ollama
+
+# pip install --upgrade langchain langchain-community langgraph
+
+# pip install langchain-ollama
+
+from typing import List, Dict
+from langgraph.graph import StateGraph, START, END
+from langchain_ollama.llms import OllamaLLM
+
+
+# Step 1: Define State
+class State(Dict):
+    messages: List[Dict[str, str]] 
+
+
+# Step 2: Initialize StateGraph
+graph_builder = StateGraph(State)
+
+# Initialize the LLM
+llm = OllamaLLM(model="llama3.1")
+
+
+# Define chatbot function
+def chatbot(state: State):
+    response = llm.invoke(state["messages"])
+    state["messages"].append({"role": "assistant", "content": response})  # Treat response as a string
+    return {"messages": state["messages"]}
+
+
+
+# Add nodes and edges
+graph_builder.add_node("chatbot", chatbot)
+graph_builder.add_edge(START, "chatbot")
+graph_builder.add_edge("chatbot", END)
+
+
+# Compile the graph
+graph = graph_builder.compile()
+
+
+# Stream updates
+def stream_graph_updates(user_input: str):    
+    state = {"messages": [{"role": "user", "content": user_input}]}
+    for event in graph.stream(state):
+        for value in event.values():
+            print("Assistant:", value["messages"][-1]["content"])
+
+
+
+# Run chatbot in a loop
+if __name__ == "__main__":
+    while True:
+        try:
+            user_input = input("User: ")
+            if user_input.lower() in ["quit", "exit", "q"]:
+                print("Goodbye!")
+                break
+
+            stream_graph_updates(user_input)
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            break
+
+
+
+How to Build Agent with LangGraph?
+LLM: Large Language model: Understand and repose
+Tool: external tool websearch tool or external functionalities
+
+!pip install --upgrade langchain langchain-community langgraph openai langchain_openai wikipedia
+
+from langchain_community.tools import WikipediaQueryRun
+from langchain_community.utilities import WikipediaAPIWrapper
+
+
+api_wrapper = WikipediaAPIWrapper(top_k_results=1, doc_content_chars_max=300)
+wiki_tool = WikipediaQueryRun(api_wrapper=api_wrapper)
+
+
+from langchain_openai import ChatOpenAI
+llm = ChatOpenAI(temperature=0, api_key="sk*******************M7", model="gpt-4o-mini")
+
+wiki_tool.run({"query": "AI agents"})
+
+
+tools = [wiki_tool]
+
+# Tool binding
+llm_with_tools = llm.bind_tools(tools)
+
+#Tool calling
+result = llm_with_tools.invoke("Hello world!")
+result
+result.content
+
+from langgraph.prebuilt import create_react_agent
+
+agent_executor = create_react_agent(llm, tools)
+     
+from langchain_core.messages import HumanMessage
+
+#First up, let's see how it responds when there's no need to call a tool:
+response = agent_executor.invoke({"messages": [HumanMessage(content="hi!")]})
+
+response["messages"]
+
+
+print(response["messages"][-1].content)
+
+from langchain_core.messages import HumanMessage
+
+#First up, let's see how it responds when there's no need to call a tool:
+response = agent_executor.invoke({"messages": [HumanMessage(content="what is agentic ai")]})
+
+response["messages"]
+
+print(response["messages"][-1].content)
+
+
+
+
+
+
+How to create custom tools?
+We dont have tools some time we have a complex problem to solve this we use or crete custom tools.
+
+!pip install --upgrade langchain langchain-community langgraph  openai langchain_openai
+
+
+from IPython.display import Image,display
+from langgraph.graph import StateGraph,START
+from langchain_openai import ChatOpenAI
+import requests
+from langchain_core.messages import SystemMessage, HumanMessage
+from langgraph.graph import MessagesState
+
+from langgraph.prebuilt import ToolNode, tools_condition
+
+from typing import Annotated
+from typing_extensions import TypedDict
+from langgraph.graph.message import add_messages
+
+
+class State(TypedDict):
+    messages: Annotated[list, add_messages]
+
+!pip install -U duckduckgo-search
+
+from langchain_community.tools import DuckDuckGoSearchRun
+search = DuckDuckGoSearchRun()
+search.invoke("Obama's first name?")
+
+
+from langchain_community.tools import DuckDuckGoSearchRun
+
+def search_duckduckgo(query: str):
+    """Searches DuckDuckGo using LangChain's DuckDuckGoSearchRun tool."""
+    search = DuckDuckGoSearchRun()
+    return search.invoke(query)
+
+# Example usage
+result = search_duckduckgo("what are AI agent")
+print(result)
+
+def multiply(a:int,b:int) -> int:
+    """
+    Multiply a and b
+    """
+    return a* b
+
+def add(a:int,b:int) -> int:
+    """
+    Adds a and b
+    """
+    return a + b
+
+from langchain_openai import ChatOpenAI
+llm = ChatOpenAI(temperature=0, api_key='sk-proj-************************QHrtvM7', model="gpt-4o-mini")
+
+llm.invoke('hello').content
+
+tools = [search_duckduckgo, add, multiply]
+
+llm_with_tools = llm.bind_tools(tools)
+     
+def chatbot(state: State):
+    return {"messages": [llm_with_tools.invoke(state["messages"])]}
+
+from langgraph.prebuilt import ToolNode, tools_condition
+
+graph_builder = StateGraph(State)
+
+# Define nodes
+graph_builder.add_node("assistant",chatbot)
+graph_builder.add_node("tools",ToolNode(tools))
+
+#define edges
+graph_builder.add_edge(START,"assistant")
+graph_builder.add_conditional_edges("assistant",tools_condition)
+graph_builder.add_edge("tools","assistant")
+
+react_graph=graph_builder.compile()
+     
+# To see the graph’s connection visually
+
+display(Image(react_graph.get_graph().draw_mermaid_png()))
+
+response = react_graph.invoke({"messages": [HumanMessage(content="what is the weather in delhi. Multiply it by 2 and add 5.")]})
+print(response["messages"])
+     
+
+
+How to use multiple Agents?
+Why we create multiple agents?
+
+Multi-Agent System: 
+How agent communicate each other
+There are 6 way:
+1. Single agent
+2. Netwok
+3. Supervisor
+4. Supervisor (As Tool)
+5. Hierarcle
+6. Custom
+
+Multi Agent Systems as Graphs:
+Agents can be visualized as a graph, where
+Nodes= Agent
+Edges= Connection between nodes
+
+Each agent performs a task and then Hand off control to another agent
+
+Example: what is handofff in multi agent system?
+Receptionist->Nurse->Doctor
+
+How handoffs work in multi agent system? 
+Example: 
+lets say we have two agent:
+Alice (a Research agent)
+Bob ( a Math agent)
+
+if Alice gets a math related question, she handsoff the task to bob.
+
+use:
+goto="math_agent(bob)"
+update = {"info":"Passing to Math Expert"}
+
+if "math" in state["task"]:
+   return Command(goto="math_agent", update={"info":"Send to Math"})
+elif "payment" in state["task"]:
+   return Command(goto="payment_agent", update={"info":"Send to payment agent"})
+else:
+    return Command(goto="research_agent", update={"info":"Send to research agent"})
+
+Code: 
+
+!pip install langgraph-supervisor langchain-openai
+from langchain_openai import ChatOpenAI
+
+from langgraph_supervisor import create_supervisor
+from langgraph.prebuilt import create_react_agent
+
+
+# Initialize OpenAI model
+model = ChatOpenAI(temperature=0, api_key="sk-pro*********************QHrtvM7", model="gpt-4o-mini")
+
+!pip install -U duckduckgo-search
+!pip install langchain langchain_community langgraph
+
+from langchain_community.tools import DuckDuckGoSearchRun
+
+def search_duckduckgo(query: str):
+    """Searches DuckDuckGo using LangChain's DuckDuckGoSearchRun tool."""
+    search = DuckDuckGoSearchRun()
+    return search.invoke(query)
+
+# Example usage
+# result = search_duckduckgo("what are AI agent")
+# print(result)
+
+def add(a: float, b: float) -> float:
+    """Add two numbers."""
+    return a + b
+
+def multiply(a: float, b: float) -> float:
+    """Multiply two numbers."""
+    return a * b
+
+from langgraph_supervisor import create_supervisor
+from langgraph.prebuilt import create_react_agent
+
+math_agent = create_react_agent(
+    model=model,
+    tools=[add, multiply],
+    name="math_expert",
+    prompt="You are a math expert. Always use one tool at a time."
+)
+research_agent = create_react_agent(
+    model=model,
+    tools=[search_duckduckgo],
+    name="research_expert",
+    prompt="You are a world class researcher with access to web search. Do not do any math."
+)
+
+# Create supervisor workflow
+workflow = create_supervisor(
+    [research_agent, math_agent],
+    model=model,
+    prompt=(
+        "You are a team supervisor managing a research expert and a math expert. "
+        "For current events, use research_agent. "
+        "For math problems, use math_agent."
+    )
+)
+# Compile and run
+app = workflow.compile()
+
+result = app.invoke({
+    "messages": [
+        {
+            "role": "user",
+            "content": "what is quantum computing?"
+        }
+    ]
+})
+result
+
+for m in result["messages"]:
+    m.pretty_print()
+
+# Compile and run
+app = workflow.compile()
+result = app.invoke({
+    "messages": [
+        {
+            "role": "user",
+            "content": "what is the weather in delhi today. Multiply it by 2 and add 5"
+        }
+    ]
+})
+
+for m in result["messages"]:
+    m.pretty_print()
+
+RAG with LangGraph: 
+----------------------------------
+(Retrieval-Augmented Generation):
+Traditional LLM: 
+problem with llm: They dont know the latest news
+personal data: not able to answer becuase they dont train traing data
+
+LLM Not checked the facts
+
+How to solve these many problem? 
+LLM Retrain and fintuning: It take time and cost high
+new information again come
+
+so this is not fisible solution.
+
+Solution is RAG: Retrieval-Augmented Generation
+Understand how RAG work:
+
+Retrieval-> Search -> <- relevant knowledge (Provide External Sources)
+Augmention-> Query + Relvant information + Text
+Geneartion-> LLM (Huggingface)
+
+Response-> to user
+
+Retrieval-Augmented Generation: 
+RAG Provide Latest information to our llm's 
+
+Halusination problem reduce
+
+If we provide private data to RAG then llm answer accordinlg
+
+With the help of RAG our static model convert into dynamic real time model.
+
+Code:
+
+!pip install langchain langchain-core langchain_community langgraph langchain-huggingface transformers torch
+
+#!pip install unstructured
+
+from langchain_community.document_loaders import UnstructuredURLLoader
+
+urls = ['https://langchain-ai.github.io/langgraph/tutorials/introduction/']
+loader = UnstructuredURLLoader(urls=urls)
+docs = loader.load()
+
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+all_splits = text_splitter.split_documents(docs)
+
+print("Total number of documents: ",len(all_splits))
+
+all_splits[7]
+
+
+# Embedding models: https://python.langchain.com/v0.1/docs/integrations/text_embedding/
+
+# Let's load the Hugging Face Embedding class.  sentence_transformers
+from langchain_community.embeddings import HuggingFaceEmbeddings
+embeddings = HuggingFaceEmbeddings()
+
+vector = embeddings.embed_query("hello, world!")
+vector[:5]
+
+#!pip install langchain_chroma
+
+from langchain_chroma import Chroma
+from langchain_core.documents import Document
+
+vectorstore = Chroma.from_documents(documents=all_splits, embedding=HuggingFaceEmbeddings())
+
+# if you want to store chromadb locally
+
+# vectorstore = Chroma.from_documents(
+#     documents=docs,
+#     embedding=HuggingFaceEmbeddings(),
+#     persist_directory="./my_chroma_db"  # Custom directory
+# )
+
+
+# Loading the Database Later
+# This reloads the previously stored embeddings so you don’t have to recompute them.
+
+# vectorstore = Chroma(
+#     persist_directory="./my_chroma_db",
+#     embedding_function=HuggingFaceEmbeddings()
+# )
+
+
+from langchain_huggingface import HuggingFacePipeline
+from langchain.prompts import PromptTemplate
+from transformers import pipeline
+from langchain_core.output_parsers import StrOutputParser
+import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+
+#model_id = "meta-llama/Meta-Llama-3-8B"
+model_id = "tiiuae/falcon-7b"
+
+# text_generation_pipeline = pipeline(
+#     "text-generation", model=model_id, model_kwargs={"torch_dtype": torch.bfloat16}, max_new_tokens=400, device=0)
+
+
+text_generation_pipeline = pipeline(
+    "text-generation",
+    model=model_id,
+    model_kwargs={"torch_dtype": torch.bfloat16},
+    max_new_tokens=200,
+    device=0,
+    temperature=0.7,  #  (lower values = more deterministic)
+    top_k=50,  # Filters out low-probability tokens
+)
+
+
+llm = HuggingFacePipeline(pipeline=text_generation_pipeline)
+
+
+
+# from langchain_core.prompts import PromptTemplate
+
+# template = """Use the following pieces of context to answer the question at the end.
+# If you don't know the answer, just say that you don't know, don't try to make up an answer.
+# Use three sentences maximum and keep the answer as concise as possible.
+# Always say "thanks for asking!" at the end of the answer.
+
+# {context}
+
+# Question: {question}
+
+# Helpful Answer:"""
+# prompt = PromptTemplate.from_template(template)
+
+
+from langchain import hub
+
+prompt = hub.pull("rlm/rag-prompt")
+
+
+from typing_extensions import List, TypedDict
+
+# Define state for application
+class State(TypedDict):
+    question: str
+    context: List[Document]
+    answer: str
+
+
+
+# Define application steps
+def retrieve(state: State):
+    retrieved_docs = vectorstore.similarity_search(state["question"],  k=1)
+    return {"context": retrieved_docs}
+
+
+def generate(state: State):
+    docs_content = "\n\n".join(doc.page_content for doc in state["context"])
+    messages = prompt.invoke({"question": state["question"], "context": docs_content})
+    response = llm.invoke(messages)
+    #return {"answer": response.content}
+    return {"answer": response}
+
+
+
+from langgraph.graph import START, StateGraph
+
+# Compile application and test
+graph_builder = StateGraph(State).add_sequence([retrieve, generate])
+graph_builder.add_edge(START, "retrieve")
+graph = graph_builder.compile()
+
+from IPython.display import Image, display
+
+display(Image(graph.get_graph().draw_mermaid_png()))
+
+response = graph.invoke({"question": "what is langgraph?"})
+print(response["answer"])
+

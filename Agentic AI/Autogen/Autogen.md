@@ -326,3 +326,192 @@ A round trip ticket to London will set you back 299. Don’t forget your umbrell
 - It’s lightweight and beginner-friendly.
 
 ---
+
+## 🧠 **What You’re Learning**
+You're expanding your skills with **Autogen Agent Chat** by exploring:
+- **Multimodal messages** (text + images)
+- **Structured outputs** using Pydantic
+- **LangChain tool integration**
+- **Teams of agents** (coming up later)
+
+---
+![alt text](image-2.png)
+
+
+## 🖼️ 1. **Multimodal Messages (Text + Image)**
+
+### ✅ What it is:
+You can send **images along with text** to the agent and get a meaningful response.
+
+### ✅ How it works:
+- Load an image (e.g., from a URL or file)
+- Create a `MultimodalMessage` with both text and image
+- Send it to the agent like a normal message
+
+### 🧪 Example:
+```python
+msg = MultimodalMessage(
+    content=["Describe this image in detail.", image],
+    role="user"
+)
+```
+
+The agent replies with a **detailed description** of the image.
+
+---
+
+## 🧾 2. **Structured Outputs with Pydantic**
+
+### ✅ What it is:
+You can ask the agent to return data in a **structured format** (like a Python object).
+
+### ✅ Why it’s useful:
+- Easy to store in databases
+- Easy to display in UIs
+- Easy to validate and process
+
+### ✅ How it works:
+1. Define a Pydantic model:
+```python
+class ImageDescription(BaseModel):
+    scene: str
+    message: str
+    style: str
+    orientation: str
+```
+
+2. Pass it to the agent:
+```python
+agent = AssistantAgent(
+    ...,
+    output_content_type=ImageDescription
+)
+```
+
+3. The agent returns a **Python object** with those fields filled in.
+
+### 🧪 Example Output:
+```python
+ImageDescription(
+    scene="A colorful room with a portal",
+    message="Creativity and AI potential",
+    style="Vibrant, illustrative",
+    orientation="Landscape"
+)
+```
+
+---
+
+## 🧩 Behind the Scenes
+- The model actually returns **JSON**
+- Autogen converts that JSON into your Pydantic object
+- You get a clean, typed Python object to work with
+
+---
+
+## 🚀 Why This Matters
+- You’re now working with **images**, not just text
+- You can get **structured, reliable data** from the model
+- You’re building the foundation for **real-world AI apps**
+
+---
+
+## 🧰 **Using LangChain Tools in Autogen**
+
+### ✅ What’s Happening:
+You’re learning how to **reuse LangChain tools** (like Google Search, file tools, etc.) inside **Autogen agents**.
+
+### ✅ Why It’s Useful:
+- LangChain has a **huge ecosystem** of tools.
+- You can now use them directly in Autogen with **almost no extra work**.
+
+---
+
+### 🛠️ Step-by-Step Summary
+
+#### 1. **Create LangChain Tools**
+Example: Google Search tool
+```python
+search = GoogleSerpAPIWrapper()
+search_tool = Tool.from_function(
+    func=search.run,
+    name="Search",
+    description="Search the internet for flight details"
+)
+```
+
+#### 2. **Wrap LangChain Tools for Autogen**
+Use `LangchainToolAdapter` to make them Autogen-compatible:
+```python
+from autogen import LangchainToolAdapter
+
+autogen_tool = LangchainToolAdapter(tool=search_tool)
+```
+
+#### 3. **Add More Tools (e.g., File Tools)**
+```python
+toolkit = FileManagementToolkit(root_dir="sandbox")
+file_tools = toolkit.get_tools()
+for tool in file_tools:
+    autogen_tools.append(LangchainToolAdapter(tool=tool))
+```
+
+#### 4. **Use Tools in an Agent**
+Create an agent and pass in the tools:
+```python
+agent = AssistantAgent(
+    name="flight_finder",
+    model=model_client,
+    tools=autogen_tools
+)
+```
+
+#### 5. **Run the Agent**
+```python
+response = await agent.on_messages([TextMessage(content=prompt, role="user")], token)
+```
+
+---
+
+## 👥 **Working with Teams of Agents**
+
+### ✅ What’s New:
+You can now create **multiple agents** that talk to each other like a team.
+
+### 🧪 Example Setup:
+- **Primary Agent**: Finds flight options
+- **Evaluator Agent**: Reviews and approves the best one
+
+### ✅ How It Works:
+1. Define both agents with different roles.
+2. Create a **Team** using `GroupChat` or `RoundRobinGroupChat`.
+3. Set a **termination condition** (e.g., when evaluator says “approve”).
+4. Run the team with `await team.run()`.
+
+---
+
+### ⚠️ Important Notes:
+- Agents can **loop endlessly** if not given clear stopping rules.
+- Use **termination conditions** wisely (e.g., keyword match or structured output).
+- If it runs too long, **restart the kernel** or **tighten the prompts**.
+
+---
+
+## 🧪 Example Termination Condition:
+```python
+termination = TerminationCondition(
+    type="text",
+    condition="approve"
+)
+```
+
+---
+
+## 🚀 What You’ve Learned
+- How to **reuse LangChain tools** in Autogen
+- How to **build agent teams** that collaborate
+- How to **control agent behavior** with prompts and termination rules
+
+---
+
+

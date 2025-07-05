@@ -1,0 +1,19 @@
+key: value
+name: mukesh
+
+courses:
+  - Node
+  - Java
+  - AWS
+  - Azure
+  - AI
+info: 
+  name: mukesh 
+  age: 24
+  channel: muekshdani
+  jobs:
+    - remote
+    - YT
+    - Tutor
+ 
+
