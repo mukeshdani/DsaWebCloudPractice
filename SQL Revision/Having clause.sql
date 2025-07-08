@@ -20,3 +20,4 @@ select Dept from EmployeeTable GROUP BY  Dept having COUNT(*) < 2
 
 -- If we want to write name
 select E_Name from EmployeeTable where Dept In (select Dept from EmployeeTable GROUP BY  Dept having COUNT(*) < 2)
+

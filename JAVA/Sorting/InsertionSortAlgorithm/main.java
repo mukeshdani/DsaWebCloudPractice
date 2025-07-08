@@ -23,7 +23,7 @@ public class main{
     }
 
     public static void main(String[] args) {
-        int[] arr = {23, 4, 65, 7};
+        int[] arr = {5,3,1,2,4};
         insertionSort(arr);
         System.out.println(Arrays.toString(arr));
     }
