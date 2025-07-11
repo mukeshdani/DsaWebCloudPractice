@@ -10,5 +10,8 @@ public class Solution{
         // comparison
         String test = "Mukesh";
         String test2 = "Mukesh";
+
+        System.out.println(a);
+        System.out.println(400);
     }
 }
