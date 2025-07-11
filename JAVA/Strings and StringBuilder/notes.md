@@ -1,80 +1,131 @@
-String and StringBuilder:
+## 🧵 **String and StringBuilder in Java**
 
-Everthing start with a capyial letter in java is a class
+### ✅ **Basic Concepts**
 
-String str  = "Mukesh Dani"
+- In Java, **everything that starts with a capital letter is a class**.
+- Example:
+  ```java
+  String str = "Mukesh Dani";
+  ```
+  - `"Mukesh Dani"` → **String object** (stored in heap memory)
+  - `str` → **Reference variable** (stored in stack memory)
+  - `String` → **Data type**, which is actually a **class**
 
-"Mukesh Dani"-> Object
-str -> reference variable
-String = -> Data type (S -> Class)
+---
 
-String a = "Mukesh"
-String b = "Mukesh"
+## 🔁 **String Pool**
 
-is this crete two different object or same ko point kr rhe honge
+### What is the String Pool?
 
-Two concept Two understand here:
-1. String Pool: 
-2. Immutabiliy:
+- The **String Pool** is a special memory region inside the **heap**.
+- It stores **unique string literals** to optimize memory usage.
 
-
-1. String Pool: 
-String name = "Mukesh"
-
-name is in stack and point to Kunal which is prenet in heap
-String pool is a separtae memory staruture inside the heep
+### Example:
+```java
+String a = "Mukesh";
+String b = "Mukesh";
+```
 
 ![alt text](image.png)
 
 ![alt text](image-1.png)
 
-it check is this presnet in the pool if present then it will point the same
+- Both `a` and `b` point to the **same object** in the **String Pool**.
+- Java checks if the string already exists in the pool:
+  - If **yes**, it reuses the reference.
+  - If **no**, it creates a new object in the pool.
 
-two refernce varible ponint same object 
-so 
-we can not change this object 
-string are immutable in java
+---
 
+## 🔒 **Immutability of Strings**
 
-Why we can't modify string object?
+### Why are Strings Immutable?
+
+- Once a `String` object is created, **its value cannot be changed**.
+- This ensures:
+  - **Security**
+  - **Thread safety**
+  - **Performance optimization** (especially with String Pool)
+  
 ![alt text](image-2.png)
 
+### Example:
+```java
+String name = "Mukesh";
+name = "Kunal"; // Creates a new object, doesn't modify the original
+```
 
-Comparison of String:
+- The original `"Mukesh"` remains unchanged.
+- A new object `"Kunal"` is created, and `name` now points to it.
 
-1. == method
-comparator ==
+---
 
-Check if reference varable are poining to same object
+## 🔍 **String Comparison**
 
-How to create different object of same value
-String a = new String("Mukesh");
+### 1. `==` Operator
+
+- Compares **reference** (memory address).
+- Checks if two variables point to the **same object**.
+
+### 2. `.equals()` Method
+
+- Compares **actual content** of the strings.
+- Use this when you want to check **value equality**.
+
+### Example:
+```java
+String a = "Mukesh";
 String b = new String("Mukesh");
 
-<!-- Creating these vlaue outside the pool but in heap -->
+System.out.println(a == b);       // false (different objects)
+System.out.println(a.equals(b));  // true (same content)
+```
 
+---
+
+## 🧠 **Creating New String Objects**
+
+### Example:
+```java
+String a = new String("Mukesh");
+String b = new String("Mukesh");
+```
 ![alt text](image-3.png)
+- These are **two different objects** in the **heap**, not in the String Pool.
+- Even though the content is the same, `a == b` will return `false`.
 
-When we only need to check value, use .equals method.
+---
 
-== this is comerator 
-.equals is a method
+## 🧱 **StringBuilder vs String**
 
+### Why use `StringBuilder`?
 
-when we print any thing which behind call valueof then value off call toString 
-either you prenet int it will also called valueof then toString 
-and same for other
+- `StringBuilder` is **mutable**.
+- Ideal for **frequent modifications** (e.g., appending, inserting).
+- More **efficient** than `String` for such operations.
 
-if you want to override the funtion then you can change the way 
+### Example:
+```java
+StringBuilder sb = new StringBuilder("Mukesh");
+sb.append(" Dani");
+System.out.println(sb); // Mukesh Dani
+```
 
-and or wrapper class also use toString behind
+---
 
-int primitive are stored in stack memory 
-and non-premitive are stored in heap memory 
+## 🧮 **Memory Allocation in Java**
 
-wrapper class are also stored in soted in heap
+- **Primitive types** (e.g., `int`, `char`) → Stored in **stack memory**
+- **Non-primitive types** (e.g., `String`, arrays, objects) → Stored in **heap memory**
+- **Wrapper classes** (e.g., `Integer`, `Double`) → Stored in **heap**, but behave like objects
 
+---
 
+## 🔄 **Behind the Scenes: `valueOf()` and `toString()`**
 
+- When printing any object, Java internally calls:
+  - `String.valueOf()` → Converts to string
+  - `toString()` → Returns string representation
+- You can **override `toString()`** in your class to customize output.
 
-
+---
