@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "prettyPrinting",
+            "request": "launch",
+            "mainClass": "prettyPrinting",
+            "projectName": "Practical_6ba8167a"
+        },
+        {
+            "type": "java",
             "name": "main",
             "request": "launch",
             "mainClass": "JAVA.Sorting.InsertionSortAlgorithm.main",
