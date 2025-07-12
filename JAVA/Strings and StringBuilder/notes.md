@@ -52,11 +52,11 @@ String b = "Mukesh";
 ### Example:
 ```java
 String name = "Mukesh";
-name = "Kunal"; // Creates a new object, doesn't modify the original
+name = "Dani"; // Creates a new object, doesn't modify the original
 ```
 
 - The original `"Mukesh"` remains unchanged.
-- A new object `"Kunal"` is created, and `name` now points to it.
+- A new object `"Dani"` is created, and `name` now points to it.
 
 ---
 
@@ -128,7 +128,121 @@ System.out.println(sb); // Mukesh Dani
   - `toString()` → Returns string representation
 - You can **override `toString()`** in your class to customize output.
 
+
+# 🔍 Java String Internals
+
 ---
 
+## 🧠 Understanding Java String Operations
 
+### 🔹 Character vs String Addition
 
+```java
+System.out.println('a' + 'b');       // Output: 195
+System.out.println("a" + "b");       // Output: ab
+System.out.println((char)('a' + 3)); // Output: d
+```
+
+### Explanation:
+
+- `'a' + 'b'` → Adds ASCII values: 97 + 98 = **195**
+- `"a" + "b"` → Concatenates strings → **"ab"**
+- `(char)('a' + 3)` → 97 + 3 = 100 → ASCII of 100 is **'d'**
+
+---
+
+## 🔄 Type Conversion in String Concatenation
+
+```java
+System.out.println("a" + 1); // Output: a1
+```
+
+- `1` is an `int`, but when added to a `String`, it's converted to `"1"` using `Integer.toString(1)`.
+
+---
+
+## 🧪 Complex Concatenation Examples
+
+```java
+System.out.println("Mukesh" + new ArrayList<>()); // Output: Mukesh[]
+System.out.println("Mukesh" + new Integer(56));   // Output: Mukesh56
+
+String ans = new Integer(56) + "" + new ArrayList<>();
+System.out.println(ans); // Output: 56[]
+```
+
+### Key Insight:
+- If **any operand is a String**, the result is a **String**.
+- Java uses `toString()` on objects during concatenation.
+
+---
+
+## 🚫 Operator Overloading in Java
+
+- Java **does not support operator overloading**.
+- Languages like **C++** and **Python** do support it.
+
+```java
+System.out.println("a" + 'b'); // Output: ab
+```
+
+- `'b'` is converted to `"b"` → `"a" + "b"` → `"ab"`
+
+---
+
+## 🧠 String Pool and Performance
+
+### 🔹 What is the String Pool?
+
+- A special memory area in the **heap**.
+- Stores **unique string literals** to save memory.
+- Improves performance by **reusing existing strings**.
+
+---
+
+## 🐢 Performance Pitfall: String Concatenation in Loops
+
+```java
+String series = "";
+for (int i = 0; i < 26; i++) {
+    char ch = (char)('a' + i);
+    series += ch;
+}
+```
+
+### Problem:
+- Each `+=` creates a **new String object**.
+- Old string is copied → **Time complexity: O(n²)**
+- **Memory inefficient**
+
+---
+
+## 🚀 Solution: Use `StringBuilder`
+
+```java
+StringBuilder builder = new StringBuilder();
+for (int i = 0; i < 26; i++) {
+    char ch = (char)('a' + i);
+    builder.append(ch);
+}
+System.out.println(builder.toString()); // Output: abcdefghijklmnopqrstuvwxyz
+```
+
+** → No new object on each append.
+- **Time complexity: O(n)** → Much faster and memory-efficient.
+
+---
+
+## 🧵 Summary of Key Concepts
+
+| Concept                     | Explanation |
+|----------------------------|-------------|
+| `'a' + 'b'`                | Adds ASCII values |
+| `"a" + 1`                  | Converts `1` to `"1"` |
+| `String + Object`          | Calls `toString()` |
+| String Pool                | Optimizes memory |
+| Operator Overloading       | Not supported in Java |
+| | Creates new object each time |
+| `StringBuilder`            | Efficient, mutable |
+
+---
