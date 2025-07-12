@@ -2,7 +2,39 @@ package JAVA.Pattern;
 
 public class Solution {
     public static void main(String[] args) {
-        pattern4(5);
+        pattern6(5);
+    }
+
+
+    static void pattern6(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= n; col++) {
+                if (col <= n - row) {
+                    // print space
+                    System.out.print("  ");
+                } else {
+                    // print star
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+
+    static void pattern5(int n ){
+        for(int row = 1 ; row<= n ; row++){
+            for(int col = 1; col <= row; col++ ){
+                 System.out.print("* ");
+            }
+            System.out.println();
+        }
+        for(int row = 1 ; row<= n ; row++){
+            for(int col = 1; col <= n - row; col++ ){
+                 System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
 
     static void pattern4(int n ){
@@ -56,3 +88,6 @@ public class Solution {
 // Type of element in column
 
 // step 3: what do you need to print
+
+
+// Try to find formula related to rows and columns
