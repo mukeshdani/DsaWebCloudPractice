@@ -2,7 +2,22 @@ package JAVA.Pattern;
 
 public class Solution {
     public static void main(String[] args) {
-        pattern6(5);
+        pattern7(5);
+    }
+
+    static void pattern7(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= n; col++) {
+                if (col <= n - row) {
+                    // print space
+                    System.out.print("  ");
+                } else {
+                    // print star
+                    System.out.print("* ");
+                }
+            }
+            System.out.println();
+        }
     }
 
 
