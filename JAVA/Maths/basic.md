@@ -141,3 +141,56 @@ If (n & 1) == 0 → Even
 ```
 
 ---
+
+### 🔹 **1. Find the number that appears only once**
+
+In an array where every number appears **twice** except one, use XOR to find the unique number:
+
+```java
+int ans = 0;
+for (int i = 0; i < arr.length; i++) {
+    ans ^= arr[i];
+}
+System.out.println("Unique number: " + ans);
+```
+
+**Example:**
+
+```java
+int[] arr = {2, 3, 4, 1, 2, 1, 3, 6, 4};
+// Output: 6
+```
+
+---
+
+### 🔹 **2. Find the ith bit of a number**
+
+To check if the **ith bit** (1-based index from the right) is set:
+
+```java
+int n = 0b10110110; // binary representation
+int i = 5; // check 5th bit
+
+boolean isSet = (n & (1 << (i - 1))) != 0;
+System.out.println("Is " + i + "th bit set? " + isSet);
+```
+
+**Explanation:**
+- `1 << (i - 1)` creates a mask with only the ith bit set.
+- `n & mask` checks if that bit is set.
+
+---
+
+### 🔹 **3. Set the ith bit of a number**
+
+To **set** the ith bit (make it 1):
+
+```java
+int n = 0b10110110;
+int i = 5;
+
+n = n | (1 << (i - 1));
+System.out.println("After setting " + i + "th bit: " + Integer.toBinaryString(n));
+```
+
+---
