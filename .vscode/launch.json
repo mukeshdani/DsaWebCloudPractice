@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SetIthBit",
+            "request": "launch",
+            "mainClass": "SetIthBit",
+            "projectName": "Practical_6ba8167a"
+        },
+        {
+            "type": "java",
             "name": "FindithBit",
             "request": "launch",
             "mainClass": "FindithBit",
