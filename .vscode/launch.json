@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Reset",
+            "request": "launch",
+            "mainClass": "Reset",
+            "projectName": "Practical_6ba8167a"
+        },
+        {
+            "type": "java",
             "name": "SetIthBit",
             "request": "launch",
             "mainClass": "SetIthBit",
