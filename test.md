@@ -114,14 +114,12 @@ Kafka shines in scenarios where you need to handle **large-scale, real-time data
 - **Why Kafka?**: It acts as a central data pipeline, ensuring smooth data flow.
 
 ### When NOT to Use Kafka?
-
 - If you need simple point-to-point messaging with low data volume, a traditional message queue (like RabbitMQ) might be enough.
 - If you need complex query processing, a database is better suited.
 
 ---
 
 ## How to Integrate Kafka: A Step-by-Step Guide 🛠️
-
 Let’s walk through setting up and using Kafka with a simple example: a producer sending user events and a consumer reading them. We’ll use **Python** and the `confluent-kafka` library for this demo.
 
 ### Step 1: Install Kafka
